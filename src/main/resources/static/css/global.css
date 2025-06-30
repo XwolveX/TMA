@@ -1,0 +1,156 @@
+/* ====================================================== */
+/* CSS CHO NAVIGATION BAR DROPDOWN */
+/* ====================================================== */
+
+/* Định vị cho item cha chứa dropdown */
+.nav-item.dropdown {
+    position: relative;
+}
+
+/* Kiểu cho menu dropdown, ẩn đi mặc định */
+.dropdown-menu {
+    display: none; /* Ẩn menu đi */
+    position: absolute; /* Định vị tuyệt đối so với item cha */
+    top: 100%; /* Hiện ngay bên dưới item cha */
+    left: 0;
+    /* === THAY ĐỔI Ở ĐÂY: Đồng bộ màu nền với navbar === */
+    background-color: rgba(20, 20, 20, 0.9); /* Nền trong suốt màu tối */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Thêm viền nhẹ cho đẹp */
+    backdrop-filter: blur(10px); /* Giữ hiệu ứng mờ */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    min-width: 220px; /* Độ rộng tối thiểu của dropdown */
+    z-index: 1000;
+    list-style: none;
+    padding: 10px 0;
+    opacity: 0; /* Bắt đầu với trạng thái trong suốt */
+    transform: translateY(10px); /* Bắt đầu với vị trí hơi dịch xuống */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hiển thị dropdown khi trỏ chuột vào item cha */
+.nav-item.dropdown:hover > .dropdown-menu {
+    display: block; /* Hiện menu lên */
+    opacity: 1; /* Mờ dần vào */
+    transform: translateY(0); /* Trượt lên vị trí cuối cùng */
+}
+
+/* Kiểu cho các link bên trong dropdown */
+.dropdown-menu a {
+    /* === THAY ĐỔI Ở ĐÂY: Đổi màu chữ thành màu sáng để dễ đọc trên nền tối === */
+    color: #FFFDD0;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block; /* Biến link thành một khối để chiếm hết chiều rộng */
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hiệu ứng khi trỏ chuột vào các link trong dropdown */
+.dropdown-menu a:hover {
+    /* === THAY ĐỔI Ở ĐÂY: Đổi màu nền hover cho phù hợp === */
+    background-color: rgba(50, 50, 50, 0.9);
+    color: #fff;
+}
+
+/* Thêm icon mũi tên cho dễ nhận biết */
+.nav-link .fa-caret-down {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Xoay nhẹ mũi tên khi hover */
+.nav-item.dropdown:hover .nav-link .fa-caret-down {
+    transform: rotate(180deg);
+}
+
+/* Đảm bảo dropdown hoạt động trên mobile */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static; /* Bỏ định vị tuyệt đối */
+        box-shadow: none;
+        background-color: transparent;
+        backdrop-filter: none;
+        border-radius: 0;
+        padding-left: 20px; /* Thụt vào một chút cho dễ nhìn */
+    }
+
+    .nav-item.dropdown:hover > .dropdown-menu {
+        display: none; /* Tắt hiệu ứng hover trên mobile */
+    }
+
+    /* Hiển thị dropdown khi menu mobile active */
+    .nav-links.active .nav-item.dropdown .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Trên mobile, chữ trong dropdown vẫn phải là màu sáng */
+    .dropdown-menu a {
+        color: #f0f0f0;
+    }
+}
+/* ====================================================== */
+/* CSS CHO CÁC NÚT LIÊN HỆ THẢ NỔI */
+/* ====================================================== */
+
+/* Keyframes cho hiệu ứng rung lắc nhẹ */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 15px rgba(22, 163, 74, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+    }
+}
+
+.floating-contact {
+    position: fixed; /* Giữ cố định trên màn hình */
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column; /* Xếp chồng lên nhau */
+    gap: 15px; /* Khoảng cách giữa các nút */
+    z-index: 9999; /* Đảm bảo nó luôn nổi lên trên cùng */
+}
+
+.float-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.float-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.float-btn img {
+    width: 35px; /* Kích thước icon bên trong */
+    height: 35px;
+}
+
+/* Kiểu riêng cho từng nút */
+.zalo-float {
+    background-color: #0068ff;
+}
+
+.phone-float {
+    background-color: #16a34a; /* Màu xanh lá cây cho nút gọi điện */
+    animation: pulse 2s infinite; /* Áp dụng hiệu ứng rung lắc */
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Về TMA - TMA Tourist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+</head>
+<body>
+
+<img src="/images/background-about.png" alt="Background" class="fixed-bg">
+
+<!-- NAVBAR đặt trước nội dung chính -->
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a href="index.html">
+            <img src="/images/logo.webp" alt="TMA Tourist Logo" height="40" loading="lazy">
+        </a>
+    </div>
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Trang chủ</a>
+        <a href="about.html" class="active">Về TMA</a>
+        <div class="nav-item dropdown">
+            <a href="service1.html" class="nav-link">
+                Dịch vụ <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <div class="dropdown-menu">
+                <!-- Thay đổi tên và đường dẫn file cho phù hợp -->
+                <a href="service1.html">Company Trip & Group Tour</a>
+                <a href="service2.html">Event & Team Building & Gala</a>
+                <a href="service3.html">Thiết Kế Tour Riêng Theo Yêu Cầu</a>
+            </div>
+        </div>
+        <a href="blog.html">Cẩm nang du lịch</a>
+        <a href="contact.html">Liên hệ</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</nav>
+
+<!-- ABOUT US FEATURE SECTION -->
+<section class="about-feature">
+    <h2 class="section-title reveal-fade-up">CHÚNG TÔI LÀ AI?</h2>
+    <div class="feature-item">
+        <div class="feature-image-container reveal-slide-left">
+            <img src="/images/aboutPage/image-about-1.jpg" alt="image-about-1">
+        </div>
+        <div class="feature-text-container reveal-slide-right">
+            <h3>Công Ty TNHH Truyền Thông Du Lịch TMA</h3>
+            <p>Chào mừng bạn đến với Công ty TNHH Truyền Thông Du Lịch TMA (TMA Tourist)!
+                Khởi nguồn từ một nhóm học thuật đầy nhiệt huyết hoạt động từ năm 2019,
+                TMA Tourist chính thức được thành lập vào ngày 16/05/2022 với khát khao
+                biến mỗi chuyến đi thành một tác phẩm nghệ thuật. Kế thừa nền tảng vững chắc
+                và tư duy bài bản, chúng tôi tự hào đã phục vụ hơn 2.500 khách hàng,
+                kiến tạo nên những hành trình độc đáo và ghi dấu ấn sâu đậm trong ngành du lịch và tổ chức sự kiện.</p>
+        </div>
+    </div>
+    <div class="feature-item">
+        <div class="feature-text-container reveal-slide-left">
+            <h3>Hành Trình Của Người Dẫn Đường</h3>
+            <p>Tại TMA Tourist, chúng tôi tin rằng: "Mỗi hành trình là một trải nghiệm đáng nhớ,
+                mỗi nụ cười là một câu chuyện truyền cảm hứng." Đây không chỉ là kim chỉ nam mà
+                còn là sứ mệnh thôi thúc chúng tôi mang đến những tour du lịch trọn gói và giải
+                pháp tổ chức sự kiện, meeting, team building vượt trên cả sự mong đợi.</p>
+        </div>
+        <div class="feature-image-container reveal-slide-right">
+            <img src="/images/aboutPage/image-about-2.jpg" alt="Hành Trình">
+        </div>
+    </div>
+</section>
+
+
+<!-- SECTION TRIẾT LÝ CỦA CHÚNG TÔI - BẮT ĐẦU -->
+<section class="philosophy-section">
+    <h2 class="section-title reveal-fade-up">Triết Lý Của Chúng Tôi</h2>
+    <div class="philosophy-grid">
+        <!-- Card Sứ Mệnh -->
+        <div class="philosophy-card reveal-fade-up">
+            <div class="philosophy-icon"><i class="fa-solid fa-paper-plane"></i></div>
+            <h3>Sứ Mệnh</h3>
+            <p>Nâng tầm giá trị du lịch, biến hành trình thành trải nghiệm đẳng cấp. Cùng với đó, lan tỏa niềm đam mê du lịch đến thế hệ trẻ, nơi giúp các bạn chinh phục các hoài bão của bản thân trong tương lai.</p>
+        </div>
+
+        <!-- Card Tầm Nhìn -->
+        <div class="philosophy-card reveal-fade-up" style="animation-delay: 200ms;">
+            <div class="philosophy-icon"><i class="fa-solid fa-eye"></i></div>
+            <h3>Tầm Nhìn</h3>
+            <p>Khát khao trở thành Công ty du lịch hàng đầu Việt Nam, tiên phong trong việc mang đến cho du khách những trải nghiệm đẳng cấp, độc đáo và bền vững – in đậm dấu ấn thương hiệu của khách hàng trong từng chặng hành trình.</p>
+        </div>
+
+        <!-- Card Giá Trị Cốt Lõi -->
+        <div class="philosophy-card reveal-fade-up" style="animation-delay: 400ms;">
+            <div class="philosophy-icon"><i class="fa-solid fa-gem"></i></div>
+            <h3>Giá Trị Cốt Lõi</h3>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Chất lượng tuyệt đối</li>
+                <li><i class="fa-solid fa-check"></i> Đổi mới sáng tạo liên tục</li>
+                <li><i class="fa-solid fa-check"></i> Hợp tác chiến lược bền vững</li>
+                <li><i class="fa-solid fa-check"></i> Dịch vụ khách hàng xuất sắc</li>
+                <li><i class="fa-solid fa-check"></i> Không ngừng cải tiến phát triển</li>
+                <li><i class="fa-solid fa-check"></i> Đóng góp tích cực cho xã hội</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- SECTION TRIẾT LÝ CỦA CHÚNG TÔI - KẾT THÚC -->
+
+
+<!-- SECTION TIMELINE -->
+<section class="timeline-section reveal-on-scroll">
+    <div class="section-content-wrapper">
+        <h2 class="section-title reveal-fade-up">LỊCH SỬ HÌNH THÀNH</h2>
+
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item reveal-on-scroll">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content content-right">
+                    <span class="timeline-year">01/2019</span>
+                    <h3>Thành lập</h3>
+                    <p>Nhóm học thuật du lịch ra đời.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-on-scroll">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content content-left">
+                    <span class="timeline-year">05/2019</span>
+                    <h3>Cải tiến</h3>
+                    <p>Mở rộng vai trò thành cầu nối nghề nghiệp giữa thành viên và doanh nghiệp du lịch.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-on-scroll">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content content-right">
+                    <span class="timeline-year">05/2022</span>
+                    <h3>Đổi mới</h3>
+                    <p>TMA Tourist chính thức thành lập, chuyển mình từ nhóm học thuật sang doanh nghiệp du lịch toàn diện.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-on-scroll">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content content-left">
+                    <span class="timeline-year">01/2023</span>
+                    <h3>Phát triển</h3>
+                    <p>Hoàn thiện bộ máy tổ chức chuyên nghiệp. Cung cấp dịch vụ du lịch trọn gói, tổ chức sự kiện và team building.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-on-scroll">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content content-right">
+                    <span class="timeline-year">01/2024</span>
+                    <h3>Hoàn thiện</h3>
+                    <p>Áp dụng chuyển đổi số toàn diện.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SECTION ĐỘI NGŨ NHÂN SỰ - BẮT ĐẦU -->
+<!-- ====================================================== -->
+<section class="team-section">
+    <h2 class="section-title reveal-fade-up">Đội Ngũ Nhân Sự</h2>
+    <p class="section-subtitle reveal-fade-up">
+        Con người là tài sản quý giá nhất của TMA Tourist. Chúng tôi tự hào có một đội ngũ chuyên nghiệp, nhiệt huyết và luôn đặt sự hài lòng của khách hàng lên hàng đầu.
+    </p>
+    <div class ="team-grid">
+        <!-- Mẫu card thành viên -->
+        <div class="team-member-card reveal-fade-up">
+            <img src="/images/aboutPage/member/President.webp" alt="Ảnh thành viên" class="team-member-photo">
+            <h4 class="team-member-name">Lê Minh Trực</h4>
+            <p class="team-member-title">Giám đốc</p>
+        </div>
+        <div class="team-member-card reveal-fade-up" style="animation-delay: 150ms;">
+            <img src="/images/aboutPage/member/Founder.webp" alt="Ảnh thành viên" class="team-member-photo">
+            <h4 class="team-member-name">Lê Minh Thành</h4>
+            <p class="team-member-title">Founder</p>
+        </div>
+    </div>
+
+    <div class="team-grid">
+        <!-- Mẫu card thành viên -->
+        <div class="team-member-card reveal-fade-up">
+            <img src="/images/aboutPage/member/Head-of-Sale.webp" alt="Ảnh thành viên" class="team-member-photo">
+            <h4 class="team-member-name">Nguyễn Hồng Chiêu Anh</h4>
+            <p class="team-member-title">Trưởng phòng kinh doanh</p>
+        </div>
+        <div class="team-member-card reveal-fade-up" style="animation-delay: 150ms;">
+            <img src="/images/aboutPage/member/Head-of-Operation.webp" alt="Ảnh thành viên" class="team-member-photo">
+            <h4 class="team-member-name">Lê thị Trang</h4>
+            <p class="team-member-title">Trưởng phòng điều hành</p>
+        </div>
+        <div class="team-member-card reveal-fade-up" style="animation-delay: 300ms;">
+            <img src="/images/aboutPage/member/Head-of-Human-resources.webp" alt="Ảnh thành viên" class="team-member-photo">
+            <h4 class="team-member-name">Phùng Ánh Vi</h4>
+            <p class="team-member-title">Trưởng phòng nhân sự</p>
+        </div>
+
+    </div>
+</section>
+<!-- ====================================================== -->
+<!-- SECTION ĐỘI NGŨ NHÂN SỰ - KẾT THÚC -->
+
+<!-- ====================================================== -->
+<!-- GEMINI API FEATURE SECTION - BẮT ĐẦU TẠI ĐÂY -->
+<!-- ====================================================== -->
+<section class="gemini-planner">
+    <h2 class="section-title reveal-fade-up">✨ Hoạch Định Chuyến Đi Mơ Ước</h2>
+    <div class="planner-container reveal-fade-up">
+        <p class="planner-description">Bạn đang phân vân chưa biết đi đâu, làm gì? Hãy nhập một địa điểm bạn yêu thích, chuyên gia AI của chúng tôi sẽ gợi ý một lịch trình thú vị dành riêng cho bạn!</p>
+        <div class="planner-input-group">
+            <input type="text" id="destinationInput" placeholder="Ví dụ: Vịnh Hạ Long, Đà Lạt, Phú Quốc...">
+            <button id="generatePlanBtn">Tạo Lịch Trình</button>
+        </div>
+        <div id="loader" class="loader" style="display: none;"></div>
+        <div id="planResult" class="plan-result">
+            <!-- Kết quả từ Gemini API sẽ được hiển thị ở đây -->
+        </div>
+    </div>
+</section>
+<!-- ====================================================== -->
+<!-- GEMINI API FEATURE SECTION - KẾT THÚC -->
+<!-- ====================================================== -->
+
+<!-- ====================================================== -->
+<!-- CÁC NÚT LIÊN HỆ THẢ NỔI -->
+<!-- ====================================================== -->
+<div class="floating-contact">
+    <!-- Nút Zalo -->
+    <!-- Thay YOUR_PHONE_NUMBER bằng SĐT đăng ký Zalo của bạn (không có số 0 ở đầu) -->
+    <a href="https://zalo.me/84988153335" class="float-btn zalo-float" target="_blank" aria-label="Chat Zalo">
+        <!-- Thay bằng đường dẫn đến icon Zalo của bạn -->
+        <img src="/images/contactPage/zalo.webp" alt="Zalo">
+    </a>
+    <!-- Nút Gọi điện -->
+    <a href="tel:0988153335" class="float-btn phone-float" aria-label="Gọi điện">
+        <!-- Thay bằng đường dẫn đến icon điện thoại của bạn -->
+        <img src="/images/contactPage/phone.png" alt="Phone">
+    </a>
+</div>
+<!-- FOOTER -->
+<footer>
+    <p>@ 2025 Nguyen Dinh Lam. Bảo lưu mọi quyền.</p>
+    <div>
+        <a href="https://www.facebook.com/dulichtma" style="color:#fff; text-decoration:none;">Facebook</a> |
+        <a href="https://zalo.me/0988153335" style="color:#fff; text-decoration:none;">Zalo</a> |
+        <a href="tel:0988153335" style="color:#fff; text-decoration:none;">Calling</a>
+    </div>
+</footer>
+
+<!-- SCRIPT -->
+<script src="/js/index.js" defer></script>
+<script src="/js/about.js" defer></script>
+
+</body>
+</html>

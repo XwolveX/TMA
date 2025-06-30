@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cẩm Nang Du Lịch - TMA Tourist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/blog.css" />
+  <link rel="stylesheet" href="/css/about.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+</head>
+<body>
+
+<img src="/images/background-about.png" alt="Background" class="fixed-bg">
+
+<!-- NAVBAR đặt trước nội dung chính -->
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a href="index.html">
+      <img src="/images/logo.webp" alt="TMA Tourist Logo" height="40" loading="lazy">
+    </a>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Trang chủ</a>
+    <a href="about.html" >Về TMA</a>
+    <div class="nav-item dropdown">
+      <a href="service1.html" class="nav-link">
+        Dịch vụ <i class="fa-solid fa-caret-down"></i>
+      </a>
+      <div class="dropdown-menu">
+        <!-- Thay đổi tên và đường dẫn file cho phù hợp -->
+        <a href="service1.html">Company Trip & Group Tour</a>
+        <a href="service2.html">Event & Team Building & Gala</a>
+        <a href="service3.html">Thiết Kế Tour Riêng Theo Yêu Cầu</a>
+      </div>
+    </div>
+    <a href="blog.html" class="active">Cẩm nang du lịch</a>
+    <a href="contact.html">Liên hệ</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</nav>
+
+
+<!-- MAIN CONTENT -->
+<main class="content-wrapper">
+
+  <!-- HEADER -->
+  <header class="header-content reveal-on-scroll">
+    <h1></h1>
+    <p></p>
+  </header>
+
+  <!-- BLOG SECTION -->
+  <section class="blog-page-section">
+
+    <!-- BÀI VIẾT NỔI BẬT (toàn bộ là một link) -->
+    <a href="blog-post-featured.html" class="featured-post-link reveal-fade-up">
+      <div class="featured-post">
+        <div class="featured-post-image">
+          <img src="https://images.unsplash.com/photo-1596422849544-763c5d793b37?q=80&w=1974" alt="Phú Quốc" onerror="this.onerror=null;this.src='https://placehold.co/1200x500/cccccc/ffffff?text=Featured+Post';">
+        </div>
+        <div class="featured-post-content">
+          <span class="category-tag">Điểm Đến Nổi Bật</span>
+          <h2>Khám Phá Phú Quốc - 5 Trải Nghiệm Không Thể Bỏ Lỡ</h2>
+          <p>Phú Quốc không chỉ có biển xanh cát trắng, mà còn ẩn chứa những điều kỳ diệu đang chờ bạn khám phá. Cùng TMA Tourist điểm qua 5 trải nghiệm độc đáo nhất tại đảo ngọc...</p>
+          <div class="read-more-btn">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+    </a>
+
+
+    <!-- BỘ LỌC CHUYÊN MỤC -->
+    <div class="category-filters reveal-fade-up">
+      <button class="filter-btn active" data-filter="all">Tất cả</button>
+      <button class="filter-btn" data-filter="diem-den">Điểm Đến Nổi Bật</button>
+      <button class="filter-btn" data-filter="kinh-nghiem">Kinh Nghiệm Du Lịch</button>
+      <button class="filter-btn" data-filter="van-hoa">Văn Hóa & Ẩm Thực</button>
+      <button class="filter-btn" data-filter="tin-tuc">Tin Tức Du Lịch</button>
+    </div>
+
+    <!-- LƯỚI BÀI VIẾT -->
+    <div class="blog-grid">
+      <!-- Bài viết mẫu 1: Toàn bộ card là một link -->
+      <a href="blog-post-1.html" class="blog-card-link" data-category="kinh-nghiem">
+        <article class="blog-card reveal-fade-up">
+          <img src="https://images.unsplash.com/photo-1562547253-235889240853?q=80&w=2070" alt="Săn vé máy bay" class="blog-card-img" onerror="this.onerror=null;this.src='https://placehold.co/400x250/cccccc/ffffff?text=Blog+Image';">
+          <div class="blog-card-content">
+            <span class="category-tag">Kinh Nghiệm Du Lịch</span>
+            <h3>Mẹo Săn Vé Máy Bay Giá Rẻ Cho Người Mới Bắt Đầu</h3>
+            <p>Tổng hợp những bí quyết giúp bạn dễ dàng sở hữu tấm vé máy bay với chi phí tối ưu nhất cho chuyến đi sắp tới.</p>
+            <div class="card-footer"><span>Đọc tiếp</span><i class="fa-solid fa-arrow-right-long"></i></div>
+          </div>
+        </article>
+      </a>
+      <!-- Bài viết mẫu 2 -->
+      <a href="blog-post-2.html" class="blog-card-link" data-category="van-hoa">
+        <article class="blog-card reveal-fade-up">
+          <img src="https://images.unsplash.com/photo-1552912492-3c82f42a2754?q=80&w=2070" alt="Ẩm thực Hà Nội" class="blog-card-img" onerror="this.onerror=null;this.src='https://placehold.co/400x250/cccccc/ffffff?text=Blog+Image';">
+          <div class="blog-card-content">
+            <span class="category-tag">Văn Hóa & Ẩm Thực</span>
+            <h3>Top 10 Món Ngon Phải Thử Khi Đến Hà Nội Mùa Thu</h3>
+            <p>Khám phá tinh hoa ẩm thực của thủ đô ngàn năm văn hiến qua những món ăn đặc trưng không thể bỏ qua.</p>
+            <div class="card-footer"><span>Đọc tiếp</span><i class="fa-solid fa-arrow-right-long"></i></div>
+          </div>
+        </article>
+      </a>
+      <!-- Bài viết mẫu 3 -->
+      <a href="blog-post-3.html" class="blog-card-link" data-category="diem-den">
+        <article class="blog-card reveal-fade-up">
+          <img src="https://images.unsplash.com/photo-1619623632724-444330182b8a?q=80&w=2070" alt="Đà Lạt" class="blog-card-img" onerror="this.onerror=null;this.src='https://placehold.co/400x250/cccccc/ffffff?text=Blog+Image';">
+          <div class="blog-card-content">
+            <span class="category-tag">Điểm Đến Nổi Bật</span>
+            <h3>Đà Lạt Mộng Mơ: Cẩm Nang Du Lịch Từ A-Z</h3>
+            <p>Tất tần tật những gì bạn cần biết để có một chuyến vi vu Đà Lạt trọn vẹn: đi đâu, ăn gì, ở đâu...</p>
+            <div class="card-footer"><span>Đọc tiếp</span><i class="fa-solid fa-arrow-right-long"></i></div>
+          </div>
+        </article>
+      </a>
+      <!-- Bài viết mẫu 4 -->
+      <a href="blog-post-4.html" class="blog-card-link" data-category="tin-tuc">
+        <article class="blog-card reveal-fade-up">
+          <img src="https://images.unsplash.com/photo-1542044896530-0578565e3952?q=80&w=2070" alt="Lễ hội" class="blog-card-img" onerror="this.onerror=null;this.src='https://placehold.co/400x250/cccccc/ffffff?text=Blog+Image';">
+          <div class="blog-card-content">
+            <span class="category-tag">Tin Tức Du Lịch</span>
+            <h3>Lễ Hội Hoa Đà Nẵng 2025: Những Điểm Mới Hấp Dẫn</h3>
+            <p>Cập nhật thông tin mới nhất về Lễ hội hoa Đà Nẵng, sự kiện được mong chờ nhất trong năm tại thành phố đáng sống.</p>
+            <div class="card-footer"><span>Đọc tiếp</span><i class="fa-solid fa-arrow-right-long"></i></div>
+          </div>
+        </article>
+      </a>
+    </div>
+  </section>
+
+
+</main>
+<!-- ====================================================== -->
+<!-- CÁC NÚT LIÊN HỆ THẢ NỔI -->
+<!-- ====================================================== -->
+<div class="floating-contact">
+  <!-- Nút Zalo -->
+  <!-- Thay YOUR_PHONE_NUMBER bằng SĐT đăng ký Zalo của bạn (không có số 0 ở đầu) -->
+  <a href="https://zalo.me/84988153335" class="float-btn zalo-float" target="_blank" aria-label="Chat Zalo">
+    <!-- Thay bằng đường dẫn đến icon Zalo của bạn -->
+    <img src="/images/contactPage/zalo.webp" alt="Zalo">
+  </a>
+  <!-- Nút Gọi điện -->
+  <a href="tel:0988153335" class="float-btn phone-float" aria-label="Gọi điện">
+    <!-- Thay bằng đường dẫn đến icon điện thoại của bạn -->
+    <img src="/images/contactPage/phone.png" alt="Phone">
+  </a>
+</div>
+<footer>
+  <p>@ 2025 Nguyen Dinh Lam. Bảo lưu mọi quyền.</p>
+  <div>
+    <a href="https://www.facebook.com/dulichtma" style="color:#fff; text-decoration:none;">Facebook</a> |
+    <a href="https://zalo.me/0988153335" style="color:#fff; text-decoration:none;">Zalo</a> |
+    <a href="tel:0988153335" style="color:#fff; text-decoration:none;">Calling</a>
+  </div>
+</footer>
+<!-- SCRIPT -->
+<script src="/js/blog.js"></script>
+<script src="/js/index.js" defer></script>
+<script src="/js/about.js" defer></script>
+
+</body>
+</html>
