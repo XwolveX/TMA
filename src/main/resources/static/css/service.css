@@ -77,8 +77,6 @@
 .gallery-item:hover img {
     filter: brightness(1.1); /* Làm ảnh sáng hơn một chút khi hover */
 }
-/* === KẾT THÚC THAY ĐỔI (Đã xóa các class .gallery-caption) === */
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -90,7 +88,7 @@
     }
 }
 /* ====================================================== */
-/* CSS CHO KHU VỰC GIẢI PHÁP (Team Building Page) */
+/* CSS  (Team Building Page) */
 /* ====================================================== */
 @keyframes floatAnimation {
     0%, 100% { transform: translateY(0); }
@@ -115,7 +113,7 @@
     max-width: 100%;
     border-radius: 12px;
     animation: floatAnimation 5s ease-in-out infinite;
-    transition: transform 0.3s ease; /* Thêm transition cho hiệu ứng parallax */
+    transition: transform 0.3s ease;
 }
 
 .solution-list {
@@ -180,7 +178,7 @@
 }
 
 /* ====================================================== */
-/* CSS CHO THƯ VIỆN ẢNH (Dùng cho cả 2 trang dịch vụ) */
+/* CSS CHO THƯ VIỆN ẢNH (Dùng cho cả 3 trang dịch vụ) */
 /* ====================================================== */
 .gallery-title {
     text-align: center;
@@ -229,7 +227,50 @@
     width: 300px;
     height: 300px;
 }
+/* ===  LỚP PHỦ VÀ TIÊU ĐỀ === */
+.gallery-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Lớp phủ gradient từ dưới lên để chữ dễ đọc */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 80%);
+    padding: 40px 20px 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
 
+.gallery-item-title {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    transform: translateY(10px); /* Hiệu ứng trượt nhẹ */
+    opacity: 0.9;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* === THAY ĐỔI HIỆU ỨNG HOVER === */
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Zoom nhẹ ảnh nền khi hover */
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 80%);
+}
+
+.gallery-item:hover .gallery-item-title {
+    transform: translateY(0);
+    opacity: 1;
+}
 /* ====================================================== */
 /* RESPONSIVE DESIGN */
 /* ====================================================== */
@@ -417,4 +458,163 @@
         grid-template-columns: 1fr;
     }
 }
+/* ====================================================== */
+/* CSS CHO LIGHTBOX GALLERY */
+/* ====================================================== */
+
+/* ====================================================== */
+/* CSS CHO LIGHTBOX LỚP 1 (LƯỚI ẢNH) */
+/* ====================================================== */
+.lightbox-grid {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-grid-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 1400px;
+    height: 90vh;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    animation: zoomIn 0.4s ease;
+}
+
+.lightbox-grid-content .lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #333;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+.lightbox-grid-content .lightbox-close:hover {
+    color: #e74c3c;
+}
+
+#lightbox-grid-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003366;
+    text-align: center;
+    margin: 10px 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+}
+
+.lightbox-grid-container {
+    flex-grow: 1;
+    overflow-y: auto; /* Cho phép cuộn nếu có nhiều ảnh */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.lightbox-thumbnail {
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.lightbox-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.lightbox-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ====================================================== */
+/* CSS CHO LIGHTBOX LỚP 2 (XEM ẢNH) */
+/* ====================================================== */
+.image-viewer {
+    position: fixed;
+    z-index: 10001; /* Nổi lên trên lightbox lưới */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.2s ease;
+}
+
+.image-viewer-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.image-viewer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.image-viewer-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.image-viewer-close:hover {
+    color: #bbb;
+}
+
+.image-viewer-prev, .image-viewer-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -30px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.image-viewer-prev {
+    left: 15px;
+    border-radius: 3px 0 0 3px;
+}
+
+.image-viewer-next {
+    right: 15px;
+}
+
+.image-viewer-prev:hover, .image-viewer-next:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoomIn { from { transform: scale(0.8); } to { transform: scale(1); } }
+
 

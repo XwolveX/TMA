@@ -114,22 +114,25 @@
     <div class="project-gallery">
       <h2 class="gallery-title reveal-fade-up">Các Chương Trình Team Building Đã Thực Hiện</h2>
       <div class="gallery-grid">
-        <div class="gallery-item reveal-fade-up">
-          <img src="https://placehold.co/600x400/3498db/ffffff?text=VPBank" alt="VPBank Team Building">
+        <div class="gallery-item reveal-fade-up" data-gallery="Big 8" data-title="BIG 8">
+          <img src="/images/ServicesPage/Big_8_images/header.webp" alt="Big 8 Team Building">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">BIG 8</h4>
+          </div>
         </div>
-        <div class="gallery-item reveal-fade-up">
+        <div class="gallery-item reveal-fade-up" data-gallery="PEPSICO">
           <img src="https://placehold.co/600x400/e67e22/ffffff?text=Boehringer" alt="Boehringer Team Building">
         </div>
-        <div class="gallery-item reveal-fade-up">
+        <div class="gallery-item reveal-fade-up" data-gallery="sony">
           <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Sony" alt="Sony Team Building">
         </div>
-        <div class="gallery-item reveal-fade-up">
+        <div class="gallery-item reveal-fade-up" data-gallery="tetrapak">
           <img src="https://placehold.co/600x400/9b59b6/ffffff?text=Tetra+Pak" alt="Tetra Pak Town Hall Meeting">
         </div>
-        <div class="gallery-item reveal-fade-up">
+        <div class="gallery-item reveal-fade-up" data-gallery="agribank">
           <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Agribank" alt="Agribank Team Building">
         </div>
-        <div class="gallery-item reveal-fade-up">
+        <div class="gallery-item reveal-fade-up" data-gallery="vus">
           <img src="https://placehold.co/600x400/1abc9c/ffffff?text=VUS" alt="VUS Team Building">
         </div>
       </div>
@@ -142,14 +145,11 @@
 <!-- ====================================================== -->
 <div class="floating-contact">
   <!-- Nút Zalo -->
-  <!-- Thay YOUR_PHONE_NUMBER bằng SĐT đăng ký Zalo của bạn (không có số 0 ở đầu) -->
   <a href="https://zalo.me/84988153335" class="float-btn zalo-float" target="_blank" aria-label="Chat Zalo">
-    <!-- Thay bằng đường dẫn đến icon Zalo của bạn -->
     <img src="/images/contactPage/zalo.webp" alt="Zalo">
   </a>
   <!-- Nút Gọi điện -->
   <a href="tel:0988153335" class="float-btn phone-float" aria-label="Gọi điện">
-    <!-- Thay bằng đường dẫn đến icon điện thoại của bạn -->
     <img src="/images/contactPage/phone.png" alt="Phone">
   </a>
 </div>
@@ -161,6 +161,27 @@
     <a href="tel:0988153335" style="color:#fff; text-decoration:none;">Calling</a>
   </div>
 </footer>
+
+<!-- === CẤU TRÚC HTML MỚI CHO LIGHTBOX === -->
+<!-- Lớp 1: Popup hiển thị lưới ảnh -->
+<div id="grid-lightbox" class="lightbox-grid">
+  <div class="lightbox-grid-content">
+    <h3 id="lightbox-grid-title"></h3>
+    <span class="lightbox-close">&times;</span>
+    <div id="lightbox-grid-container" class="lightbox-grid-container">
+    </div>
+  </div>
+</div>
+
+<!-- Lớp 2: Popup hiển thị ảnh chi tiết -->
+<div id="image-viewer" class="image-viewer">
+  <span class="image-viewer-close">&times;</span>
+  <a class="image-viewer-prev">&#10094;</a>
+  <a class="image-viewer-next">&#10095;</a>
+  <div class="image-viewer-content">
+    <img class="image-viewer-image" src="" alt="Hình ảnh phóng to">
+  </div>
+</div>
 
 <script src="/js/index.js" defer></script>
 <script src="/js/blog.js" defer></script>
