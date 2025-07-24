@@ -1,5 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+        const desktopSrc = '/videos/videoHero.webm';
+        const mobileSrc = '/videos/videoMobile.webm';
 
+        function setVideoSource() {
+            const currentSrc = window.innerWidth <= 768 ? mobileSrc : desktopSrc;
+            if (heroVideo.getAttribute('src') !== currentSrc) {
+                heroVideo.setAttribute('src', currentSrc);
+                heroVideo.load();
+            }
+        }
+        setVideoSource();
+        window.addEventListener('resize', setVideoSource);
+    }
     // --- LOGIC CHO HAMBURGER & DROPDOWN MENU ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.getElementById('navLinks');

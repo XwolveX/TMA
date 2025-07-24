@@ -1,8 +1,6 @@
 html {
     overflow-x: hidden;
 }
-
-/* General Resets and Base Styles */
 * {
     padding: 0;
     box-sizing: border-box;
@@ -19,8 +17,6 @@ body {
     color: #333;
     line-height: 1.6;
 }
-
-/* Navbar */
 .navbar {
     background-color: rgba(0, 0, 0, .2);
     border: 1px solid rgba(255, 255, 255, .1);
@@ -138,12 +134,14 @@ body {
 }
 
 .hero-content h1 {
-    margin-top: 50px;
+    margin-top: 30px;
     font-family: 'Dancing Script', cursive;
     font-size: 3em;
     font-weight: 700;
-    color: #fffdd0;
+    margin-right: 30px;
+    margin-left: 30px;
     margin-bottom: 10px;
+    color: #fffdd0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .7);
 }
 
