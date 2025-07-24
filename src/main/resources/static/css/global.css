@@ -1,125 +1,116 @@
 /* ====================================================== */
-/* CSS CHO NAVIGATION BAR DROPDOWN */
+/* CSS CHO NAVIGATION BAR DROPDOWN (ĐÃ SỬA CHO MOBILE) */
 /* ====================================================== */
 
-/* Định vị cho item cha chứa dropdown */
 .nav-item.dropdown {
     position: relative;
 }
 
-/* Kiểu cho menu dropdown, ẩn đi mặc định */
 .dropdown-menu {
-    display: none; /* Ẩn menu đi */
-    position: absolute; /* Định vị tuyệt đối so với item cha */
-    top: 100%; /* Hiện ngay bên dưới item cha */
+    display: none;
+    position: absolute;
+    top: 100%;
     left: 0;
-    /* === THAY ĐỔI Ở ĐÂY: Đồng bộ màu nền với navbar === */
-    background-color: rgba(20, 20, 20, 0.9); /* Nền trong suốt màu tối */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Thêm viền nhẹ cho đẹp */
-    backdrop-filter: blur(10px); /* Giữ hiệu ứng mờ */
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    min-width: 220px; /* Độ rộng tối thiểu của dropdown */
+    min-width: 250px;
     z-index: 1000;
     list-style: none;
     padding: 10px 0;
-    opacity: 0; /* Bắt đầu với trạng thái trong suốt */
-    transform: translateY(10px); /* Bắt đầu với vị trí hơi dịch xuống */
+    opacity: 0;
+    transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Hiển thị dropdown khi trỏ chuột vào item cha */
-.nav-item.dropdown:hover > .dropdown-menu {
-    display: block; /* Hiện menu lên */
-    opacity: 1; /* Mờ dần vào */
-    transform: translateY(0); /* Trượt lên vị trí cuối cùng */
+/* Hiển thị dropdown khi trỏ chuột vào item cha trên desktop */
+@media (min-width: 769px) {
+    .nav-item.dropdown:hover > .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Kiểu cho các link bên trong dropdown */
 .dropdown-menu a {
-    /* === THAY ĐỔI Ở ĐÂY: Đổi màu chữ thành màu sáng để dễ đọc trên nền tối === */
-    color: #FFFDD0;
+    color: #f0f0f0;
     padding: 12px 20px;
     text-decoration: none;
-    display: block; /* Biến link thành một khối để chiếm hết chiều rộng */
+    display: block;
     font-size: 0.95rem;
     font-weight: 500;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Hiệu ứng khi trỏ chuột vào các link trong dropdown */
 .dropdown-menu a:hover {
-    /* === THAY ĐỔI Ở ĐÂY: Đổi màu nền hover cho phù hợp === */
     background-color: rgba(50, 50, 50, 0.9);
     color: #fff;
 }
 
-/* Thêm icon mũi tên cho dễ nhận biết */
 .nav-link .fa-caret-down {
     margin-left: 5px;
     transition: transform 0.3s ease;
 }
 
-/* Xoay nhẹ mũi tên khi hover */
-.nav-item.dropdown:hover .nav-link .fa-caret-down {
-    transform: rotate(180deg);
+@media (min-width: 769px) {
+    .nav-item.dropdown:hover .nav-link .fa-caret-down {
+        transform: rotate(180deg);
+    }
 }
 
-/* Đảm bảo dropdown hoạt động trên mobile */
+/* === CSS SỬA LỖI CHO MOBILE DROPDOWN === */
 @media (max-width: 768px) {
     .dropdown-menu {
-        position: static; /* Bỏ định vị tuyệt đối */
+        position: static;
         box-shadow: none;
         background-color: transparent;
         backdrop-filter: none;
         border-radius: 0;
-        padding-left: 20px; /* Thụt vào một chút cho dễ nhìn */
-    }
-
-    .nav-item.dropdown:hover > .dropdown-menu {
-        display: none; /* Tắt hiệu ứng hover trên mobile */
-    }
-
-    /* Hiển thị dropdown khi menu mobile active */
-    .nav-links.active .nav-item.dropdown .dropdown-menu {
-        display: block;
+        padding-left: 20px;
+        min-width: auto;
+        border: none;
+        display: none; /* Giữ menu ẩn ban đầu */
         opacity: 1;
         transform: none;
+        padding-top: 10px;
+        padding-bottom: 0;
     }
 
-    /* Trên mobile, chữ trong dropdown vẫn phải là màu sáng */
+    /* Hiển thị menu con khi có class 'open' */
+    .nav-item.dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    /* Xoay mũi tên khi menu con mở */
+    .nav-item.dropdown.open .nav-link .fa-caret-down {
+        transform: rotate(180deg);
+    }
+
     .dropdown-menu a {
         color: #f0f0f0;
+        padding: 10px 0;
     }
 }
+
 /* ====================================================== */
 /* CSS CHO CÁC NÚT LIÊN HỆ THẢ NỔI */
 /* ====================================================== */
-
-/* Keyframes cho hiệu ứng rung lắc nhẹ */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
-    }
-    70% {
-        transform: scale(1.1);
-        box-shadow: 0 0 0 15px rgba(22, 163, 74, 0);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
-    }
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(22, 163, 74, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
 }
 
 .floating-contact {
-    position: fixed; /* Giữ cố định trên màn hình */
+    position: fixed;
     bottom: 30px;
     right: 30px;
     display: flex;
-    flex-direction: column; /* Xếp chồng lên nhau */
-    gap: 15px; /* Khoảng cách giữa các nút */
-    z-index: 9999; /* Đảm bảo nó luôn nổi lên trên cùng */
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
 }
 
 .float-btn {
@@ -141,16 +132,161 @@
 }
 
 .float-btn img {
-    width: 35px; /* Kích thước icon bên trong */
+    width: 35px;
     height: 35px;
 }
 
-/* Kiểu riêng cho từng nút */
-.zalo-float {
-    background-color: #0068ff;
+.zalo-float { background-color: #0068ff; }
+.phone-float { background-color: #16a34a; animation: pulse 2s infinite; }
+
+/* Thiết lập cơ bản cho trang */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Màu nền trang để dễ nhìn footer */
 }
 
-.phone-float {
-    background-color: #16a34a; /* Màu xanh lá cây cho nút gọi điện */
-    animation: pulse 2s infinite; /* Áp dụng hiệu ứng rung lắc */
+/* Container chính của Footer */
+.site-footer {
+    background-color: #222831; /* Màu nền tối sang trọng */
+    color: #eeeeee;
+    padding: 30px 0; /* Giảm padding dọc để footer hẹp hơn */
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Lưới chia cột cho phần chính của footer */
+.footer-main {
+    display: grid;
+    /* Tự động chia cột, mỗi cột tối thiểu 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; /* Giảm khoảng cách giữa các cột */
+    padding-bottom: 40px;
+}
+
+/* Tiêu đề của mỗi cột */
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 700;
+    position: relative;
+    text-transform: uppercase;
+}
+
+/* Gạch chân trang trí dưới tiêu đề cột */
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Đặt vị trí bắt đầu ở giữa */
+    transform: translateX(-50%); /* Dịch chuyển về bên trái 50% độ dài của chính nó */
+    bottom: -8px;
+    background-color: #00adb5; /* Đây chính là màu xanh của đường gạch */
+    height: 3px;
+    width: 50px;
+    border-radius: 2px;
+}
+
+/* Logo công ty */
+.footer-logo {
+    max-width: 180px; /* Điều chỉnh logo nếu cần */
+    margin-bottom: 20px;
+}
+
+/* Cột giới thiệu */
+.footer-col.about p {
+    margin-bottom: 15px;
+    color: #bbbbbb;
+}
+.footer-col.about i {
+    margin-right: 12px;
+    color: #00adb5;
+    width: 20px;
+    text-align: center;
+}
+
+/* Danh sách liên kết */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #bbbbbb;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #00adb5;
+    padding-left: 5px; /* Hiệu ứng thụt vào khi hover */
+}
+
+/* Icon mạng xã hội */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 10px 10px 0;
+    border-radius: 50%;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #00adb5;
+    transform: translateY(-3px);
+}
+
+/* Google Maps */
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    border: none;
+    border-radius: 8px;
+    filter: grayscale(0.3); /* Hiệu ứng màu cho bản đồ */
+    transition: filter 0.3s ease;
+}
+
+.map-container iframe:hover {
+    filter: grayscale(0);
+}
+
+/* Phần bản quyền dưới cùng */
+.footer-bottom {
+    border-top: 1px solid #393e46;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #999999;
+}
+
+/* Responsive: Tự điều chỉnh trên thiết bị di động */
+@media (max-width: 768px) {
+    .footer-main {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột trên mobile */
+    }
+    .footer-col {
+        margin-bottom: 30px;
+    }
+    .footer-col:last-child {
+        margin-bottom: 0;
+    }
 }

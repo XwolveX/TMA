@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/about.css" />
     <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/service.css" />
 </head>
 <body>
 
-<img src="/images/background-about.png" alt="Background" class="fixed-bg">
+<img src="/images/background-about.webp" alt="Background" class="fixed-bg">
 
 <!-- NAVBAR đặt trước nội dung chính -->
 <nav class="navbar">
@@ -25,11 +26,10 @@
         <a href="index.html">Trang chủ</a>
         <a href="about.html" class="active">Về TMA</a>
         <div class="nav-item dropdown">
-            <a href="service1.html" class="nav-link">
+            <a href="service1.html" class="nav-link" id="services-menu-toggle">
                 Dịch vụ <i class="fa-solid fa-caret-down"></i>
             </a>
             <div class="dropdown-menu">
-                <!-- Thay đổi tên và đường dẫn file cho phù hợp -->
                 <a href="service1.html">Company Trip & Group Tour</a>
                 <a href="service2.html">Event & Team Building & Gala</a>
                 <a href="service3.html">Thiết Kế Tour Riêng Theo Yêu Cầu</a>
@@ -38,7 +38,7 @@
         <a href="blog.html">Cẩm nang du lịch</a>
         <a href="contact.html">Liên hệ</a>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger">
         <div></div>
         <div></div>
         <div></div>
@@ -47,7 +47,9 @@
 
 <!-- ABOUT US FEATURE SECTION -->
 <section class="about-feature">
-    <h2 class="section-title reveal-fade-up">CHÚNG TÔI LÀ AI?</h2>
+    <header class="header-content reveal-on-scroll">
+        <h2 class="service-title"> CHÚNG TÔI LÀ AI?</h2>
+    </header>
     <div class="feature-item">
         <div class="feature-image-container reveal-slide-left">
             <img src="/images/aboutPage/image-about-1.jpg" alt="image-about-1">
@@ -79,7 +81,9 @@
 
 <!-- SECTION TRIẾT LÝ CỦA CHÚNG TÔI - BẮT ĐẦU -->
 <section class="philosophy-section">
-    <h2 class="section-title reveal-fade-up">Triết Lý Của Chúng Tôi</h2>
+    <header class="header-content reveal-on-scroll">
+        <h2 class="service-title"> Triết Lý Của Chúng Tôi</h2>
+    </header>
     <div class="philosophy-grid">
         <!-- Card Sứ Mệnh -->
         <div class="philosophy-card reveal-fade-up">
@@ -170,10 +174,14 @@
     </div>
 </section>
 
-<!-- SECTION ĐỘI NGŨ NHÂN SỰ - BẮT ĐẦU -->
+<!-- SECTION ĐỘI NGŨ NHÂN SỰ -->
 <!-- ====================================================== -->
 <section class="team-section">
-    <h2 class="section-title reveal-fade-up">Đội Ngũ Nhân Sự</h2>
+    <header class="header-content reveal-on-scroll">
+        <h2 class="service-title"> ĐỘI NGŨ NHÂN SỰ</h2>
+    </header>
+    <p class="section-subtitle reveal-fade-up">
+    </p>
     <p class="section-subtitle reveal-fade-up">
         Con người là tài sản quý giá nhất của TMA Tourist. Chúng tôi tự hào có một đội ngũ chuyên nghiệp, nhiệt huyết và luôn đặt sự hài lòng của khách hàng lên hàng đầu.
     </p>
@@ -191,73 +199,53 @@
         </div>
     </div>
 
-    <div class="team-grid">
-        <!-- Mẫu card thành viên -->
-        <div class="team-member-card reveal-fade-up">
-            <img src="/images/aboutPage/member/Head-of-Sale.webp" alt="Ảnh thành viên" class="team-member-photo">
-            <h4 class="team-member-name">Nguyễn Hồng Chiêu Anh</h4>
-            <p class="team-member-title">Trưởng phòng kinh doanh</p>
-        </div>
-        <div class="team-member-card reveal-fade-up" style="animation-delay: 150ms;">
-            <img src="/images/aboutPage/member/Head-of-Operation.webp" alt="Ảnh thành viên" class="team-member-photo">
-            <h4 class="team-member-name">Lê thị Trang</h4>
-            <p class="team-member-title">Trưởng phòng điều hành</p>
-        </div>
-        <div class="team-member-card reveal-fade-up" style="animation-delay: 300ms;">
-            <img src="/images/aboutPage/member/Head-of-Human-resources.webp" alt="Ảnh thành viên" class="team-member-photo">
-            <h4 class="team-member-name">Phùng Ánh Vi</h4>
-            <p class="team-member-title">Trưởng phòng nhân sự</p>
-        </div>
-
-    </div>
 </section>
-<!-- ====================================================== -->
-<!-- SECTION ĐỘI NGŨ NHÂN SỰ - KẾT THÚC -->
-
-<!-- ====================================================== -->
-<!-- GEMINI API FEATURE SECTION - BẮT ĐẦU TẠI ĐÂY -->
-<!-- ====================================================== -->
-<section class="gemini-planner">
-    <h2 class="section-title reveal-fade-up">✨ Hoạch Định Chuyến Đi Mơ Ước</h2>
-    <div class="planner-container reveal-fade-up">
-        <p class="planner-description">Bạn đang phân vân chưa biết đi đâu, làm gì? Hãy nhập một địa điểm bạn yêu thích, chuyên gia AI của chúng tôi sẽ gợi ý một lịch trình thú vị dành riêng cho bạn!</p>
-        <div class="planner-input-group">
-            <input type="text" id="destinationInput" placeholder="Ví dụ: Vịnh Hạ Long, Đà Lạt, Phú Quốc...">
-            <button id="generatePlanBtn">Tạo Lịch Trình</button>
-        </div>
-        <div id="loader" class="loader" style="display: none;"></div>
-        <div id="planResult" class="plan-result">
-            <!-- Kết quả từ Gemini API sẽ được hiển thị ở đây -->
-        </div>
-    </div>
-</section>
-<!-- ====================================================== -->
-<!-- GEMINI API FEATURE SECTION - KẾT THÚC -->
-<!-- ====================================================== -->
-
 <!-- ====================================================== -->
 <!-- CÁC NÚT LIÊN HỆ THẢ NỔI -->
 <!-- ====================================================== -->
 <div class="floating-contact">
     <!-- Nút Zalo -->
-    <!-- Thay YOUR_PHONE_NUMBER bằng SĐT đăng ký Zalo của bạn (không có số 0 ở đầu) -->
     <a href="https://zalo.me/84988153335" class="float-btn zalo-float" target="_blank" aria-label="Chat Zalo">
-        <!-- Thay bằng đường dẫn đến icon Zalo của bạn -->
         <img src="/images/contactPage/zalo.webp" alt="Zalo">
     </a>
     <!-- Nút Gọi điện -->
     <a href="tel:0988153335" class="float-btn phone-float" aria-label="Gọi điện">
-        <!-- Thay bằng đường dẫn đến icon điện thoại của bạn -->
         <img src="/images/contactPage/phone.png" alt="Phone">
     </a>
 </div>
 <!-- FOOTER -->
-<footer>
-    <p>@ 2025 Nguyen Dinh Lam. Bảo lưu mọi quyền.</p>
-    <div>
-        <a href="https://www.facebook.com/dulichtma" style="color:#fff; text-decoration:none;">Facebook</a> |
-        <a href="https://zalo.me/0988153335" style="color:#fff; text-decoration:none;">Zalo</a> |
-        <a href="tel:0988153335" style="color:#fff; text-decoration:none;">Calling</a>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-main">
+
+            <div class="footer-col about">
+                <img src="/images/logo.webp" alt="Logo Công ty" class="footer-logo">
+                <h2><strong>CÔNG TY TNHH TRUYỀN THÔNG DU LỊCH TMA</strong></h2>
+                <p><i class="fas fa-map-marker-alt"></i>17 Đường Số 1, Bình Hưng, Bình Chánh, Hồ Chí Minh, Việt Nam</p>
+                <p><i class="fas fa-phone-alt"></i><a href="tel:0988153335" style="color:#bbb; text-decoration:none;">0988 153 335</a></p>
+                <p><i class="fas fa-envelope"></i><a href="mailto:tmatourist@gmail.com" style="color:#bbb; text-decoration:none;">tmatourist@gmail.com</a></p>
+                <p><i class="fas fa-barcode"></i>Mã số thuế: 0317292143</p>
+            </div>
+
+            <div class="footer-col map">
+                <h4>Vị trí văn phòng</h4>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.1615998327056!2d106.65929801162211!3d10.722016289379399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f001ab1c805%3A0x134192f34551c051!2sC%C3%B4ng%20ty%20TMA%20Tourist!5e0!3m2!1svi!2s!4v1752767667465!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/dulichtma" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/tma_tourist/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@TMATOURIST" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://zalo.me/0988153335" aria-label="Zalo" title="Zalo"><i class="fa-solid fa-comment-dots"></i></a>
+                <a href="https://www.tiktok.com/@tmatourist" aria-label="Tiktok" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p>Bản quyền &copy; 2025 thuộc về CÔNG TY TNHH TRUYỀN THÔNG DU LỊCH TMA.</p>
+        </div>
     </div>
 </footer>
 

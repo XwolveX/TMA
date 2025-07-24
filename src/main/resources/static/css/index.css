@@ -1,36 +1,41 @@
+html {
+    overflow-x: hidden;
+}
 
+/* General Resets and Base Styles */
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+*,
 body {
-    margin: 0; /* Đảm bảo không có margin mặc định cho body */
-    font-family: 'Montserrat', sans-serif;
-    background-color: black;
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden; /* Đảm bảo không có thanh cuộn ngang */
+    margin: 0;
 }
 
-/* Navbar styles */
+body {
+    font-family: Montserrat, sans-serif;
+    background-color: #000;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.2); /* Đen trong suốt 20% */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Viền trắng trong suốt nhẹ */
+    background-color: rgba(0, 0, 0, .2);
+    border: 1px solid rgba(255, 255, 255, .1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-    height: 80px; /* Chiều cao cố định của navbar */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bóng đổ nhẹ nhàng */
-    animation: slideFadeIn 0.8s ease-out;
-
-    position: fixed; /* Đảm bảo navbar cố định ở đầu trang */
+    height: 80px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    animation: .8s ease-out slideFadeIn;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Đảm bảo navbar luôn nằm trên các phần tử khác, bao gồm cả video */
+    z-index: 1000;
 }
 
 .navbar-brand img {
@@ -48,13 +53,13 @@ body {
 
 .nav-links a {
     position: relative;
-    color: #FFFDD0; /* Vàng kem / Vàng sữa */
+    color: #fffdd0;
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
-    text-decoration: none;
     padding-bottom: 4px;
-    transition: color 0.3s ease;
+    text-decoration: none;
+    transition: color .3s;
 }
 
 .nav-links a::after {
@@ -64,50 +69,50 @@ body {
     bottom: 0;
     height: 2px;
     width: 0;
-    background-color: #DAA520; /* Goldenrod - màu vàng đậm hơn */
-    transition: width 0.3s ease;
+    background-color: #daa520;
+    transition: width .3s;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-links a.active::after,
+.nav-links a:hover::after {
     width: 100%;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #DAA520; /* Goldenrod - màu vàng đậm hơn */
+.nav-links a.active,
+.nav-links a:hover {
+    color: #daa520;
 }
 
-/* Hamburger menu styles (for mobile) */
+/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    z-index: 1001; /* Đảm bảo hamburger nằm trên navbar */
+    z-index: 1001;
 }
 
 .hamburger div {
     width: 28px;
     height: 3px;
-    background-color: #FFFDD0; /* Màu hamburger vàng sữa */
+    background-color: #fffdd0;
     margin: 5px 0;
-    transition: all 0.3s ease;
+    transition: .3s;
     border-radius: 2px;
 }
 
-/* Video Hero Section Styles */
+/* Hero Section */
 .video-hero {
-    margin-top: 0; /* Không có margin-top, để video sát lên trên cùng */
+    margin-top: 0;
     position: relative;
     width: 100%;
-    height: 100vh; /* Chiếm toàn bộ chiều cao của viewport */
+    height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white; /* Giữ màu chữ trong hero-content là trắng để nổi bật */
-    background-color: rgba(0, 0, 0, 0.3); /* Lớp phủ nếu video không tải được */
+    color: #fff;
+    background-color: rgba(0, 0, 0, .3);
 }
 
 .video-background {
@@ -117,15 +122,14 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; /* Đảm bảo video nằm dưới nội dung hero và dưới navbar */
-    filter: brightness(0.8); /* Điều chỉnh độ sáng của video nền */
+    z-index: -1;
+    filter: brightness(.8);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    padding: 20px; /* Giữ padding để nội dung không bị dính sát nhau */
-    /* LOẠI BỎ background-color, border-radius, backdrop-filter để bỏ khung đen */
+    padding: 20px;
 }
 
 .hero-content .hero-logo {
@@ -134,107 +138,99 @@ body {
 }
 
 .hero-content h1 {
-    font-family: 'Dancing Script', cursive; /* Áp dụng font Dancing Script */
-    font-size: 3em; /* Kích thước chữ cho nổi bật hơn */
-    font-weight: 700; /* Độ đậm của chữ */
-    color: #FFFDD0; /* Màu vàng sữa */
+    margin-top: 50px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    font-weight: 700;
+    color: #fffdd0;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Thêm đổ bóng chữ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .7);
 }
 
 .hero-content p {
     font-size: 1.5em;
     margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .7);
 }
 
 .hero-button {
-    background-color: #E24C4B;
-    color: white;
+    margin-top: 10px;
+    background-color: #e24c4b;
+    color: #fff;
     padding: 15px 30px;
     font-size: 1.2em;
     font-weight: 700;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color .3s, transform .2s;
 }
 
 .hero-button:hover {
-    background-color: #FF5A5A;
+    background-color: #ff5a5a;
     transform: translateY(-2px);
 }
 
-/* Mascot Info Section Styles */
+/* Mascot Info Section */
 .mascot-info-section {
     position: relative;
     overflow: hidden;
-
     color: #f0f0f0;
-    /* Điều chỉnh padding-top để tạo không gian cho header mới */
-    padding: 40px 30px 80px; /* padding-top: 40px, padding-left/right: 30px, padding-bottom: 80px */
+    padding: 40px 30px 80px;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Quan trọng: để header, container, made-by-text xếp dọc */
-    justify-content: center; /* Căn giữa theo chiều dọc */
-    align-items: center; /* Căn giữa theo chiều ngang */
-    z-index: 5; /* Để nội dung nổi lên trên ảnh và overlay */
-    margin-top: -70px; /* THAY ĐỔI GIÁ TRỊ NÀY ĐỂ CHỒNG LÊN */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    margin-top: -70px;
 }
-/* STYLE CHO HEADER MỚI */
-.section-header-title {
-    font-family: 'Montserrat', sans-serif; /* Hoặc font khác bạn muốn */
-    font-size: 3em; /* Kích thước chữ */
-    font-weight: 1500; /* Độ đậm */
-    color: #262357; /* Màu vàng kem */
-    text-align: center; /* Căn giữa */
-    margin-top: 60px; /* ĐẨY TIÊU ĐỀ XUỐNG MỘT CHÚT */
-    margin-bottom: 2px; /* Khoảng cách dưới tiêu đề đến container */
-    text-transform: uppercase; /* Chữ hoa */
-    letter-spacing: 2px; /* Khoảng cách chữ */
-    position: relative; /* Để nằm trên lớp phủ nếu cần */
-    z-index: 10; /* Đảm bảo nó nổi lên */
-}
-/* Style cho dòng chữ "Chuyên nghiệp - Sáng tạo - Linh hoạt" */
-h1.reasons-slogan {
-    font-family: 'Montserrat', sans-serif;
-    color: #cda453; /* Màu chữ chính của slogan */
-    font-size: 2em; /* Kích thước chữ cho slogan (có thể điều chỉnh) */
-    font-weight: 700; /* Độ đậm cho slogan */
-    margin-top: 10px; /* Đảm bảo không có margin top mặc định đẩy nó xuống */
-    margin-bottom: 20px; /* Khoảng cách dưới slogan đến mascot-info-container (điều chỉnh) */
-    text-align: center; /* Căn giữa slogan */
-    position: relative;
-    z-index: 10; /* Đảm bảo nó nổi lên trên các lớp phủ */
-    /* BACKGROUND VÀ BO GÓC */
-    background-color: rgba(255, 251, 231, 0.5); /* Màu nền vàng kem (#FFFBE7) với độ trong suốt 90% */
-    padding: 0px 5px; /* Khoảng cách đệm bên trong background */
-    border-radius: 100px; /* Bo cong cực nhiều để tạo hình viên thuốc/oval */
 
-    /* Đổ bóng nhẹ cho background (tùy chọn) */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.section-header-title {
+    font-family: Montserrat, sans-serif;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 1500;
+    color: #262357;
+    margin-top: 60px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1.reasons-slogan {
+    font-family: Montserrat, sans-serif;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #cda453;
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 251, 231, .5);
+    padding: 0 5px;
+    border-radius: 100px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
 }
 
 h1.reasons-slogan span {
-    color: #cda453; /* Màu riêng cho chữ "Sáng tạo" */
+    color: #cda453;
 }
-/* THÊM STYLE MỚI CHO ẢNH NỀN GỌI TRỰC TIẾP TRONG HTML */
+
 .mascot-section-background-image {
-    position: absolute; /* Quan trọng: Định vị tuyệt đối để nó nằm dưới nội dung */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Đảm bảo ảnh bao phủ toàn bộ section */
-    z-index: -2; /* Đặt dưới lớp phủ và dưới nội dung */
-    /* Nếu ảnh nền của bạn quá sáng, có thể làm tối trực tiếp bằng filter: brightness() */
-    filter: brightness(90%) contrast(90%) ;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(90%) contrast(90%);
 }
-.cut-image {
-    display: block;
-    width: 100%;
-    filter: brightness(60%); /* Làm tối ảnh xuống 60% độ sáng */
-}
+
 .mascot-info-container {
     display: flex;
     max-width: 1400px;
@@ -244,11 +240,8 @@ h1.reasons-slogan span {
     position: relative;
     flex-wrap: wrap;
     gap: 20px;
-    /* margin-top: 0; */ /* Đảm bảo không có margin-top thừa */
 }
 
-
-/* Nhân vật Mascot chính - ở giữa */
 .mascot-main-display {
     position: relative;
     z-index: 5;
@@ -256,47 +249,47 @@ h1.reasons-slogan span {
 }
 
 .main-mascot-video {
-    max-width: 600px; /* Giới hạn chiều rộng tối đa cho video mascot, giống như ảnh */
-    height: auto; /* Chiều cao tự động để duy trì tỷ lệ */
-    display: block; /* Loại bỏ khoảng trắng dưới video */
-    object-fit: contain; /* Hoặc 'cover' tùy thuộc vào cách bạn muốn video hiển thị trong khung của nó */
-    border-radius: 15px; /* Nếu video có nền và bạn muốn bo góc */
+    max-width: 600px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 15px;
 }
-/* Khung thông tin bên trái - định vị tuyệt đối */
+
+/* Mascot Details & Cards */
 .mascot-details-left {
     position: absolute;
-    left: 100px; /* Vị trí */
-    top: 40%; /* Vị trí */
+    left: 100px;
+    top: 40%;
     transform: translateY(-50%);
     z-index: 10;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Căn trái nội dung */
+    align-items: flex-start;
     gap: 30px;
     padding-left: 20px;
-    max-width: 300px; /* Giới hạn chiều rộng */
+    max-width: 300px;
 }
 
 .mascot-card {
     background-color: #2b2b2b;
     border-radius: 15px;
     padding: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 200px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, .1);
     text-align: center;
-    cursor: pointer; /* THÊM CON TRỎ CHUỘT DẠNG HAND */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng hover */
+    cursor: pointer;
+    transition: transform .3s, box-shadow .3s;
 }
 
 .mascot-card:hover {
-    transform: translateY(-5px); /* Nổi lên khi hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Bóng đổ đậm hơn khi hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .5);
 }
-
 
 .mascot-thumbnail {
     width: 80px;
@@ -306,17 +299,15 @@ h1.reasons-slogan span {
     margin-bottom: 10px;
 }
 
-/* LOẠI BỎ HOẶC ĐIỀU CHỈNH RARITY-SCORE VÀ ARROW-BUTTON NẾU CẦN */
 .rarity-score {
     display: flex;
     align-items: center;
-    justify-content: center; /* Căn giữa text mới */
+    justify-content: center;
     width: 100%;
-    font-size: 0.85em;
-    color: #FFFDD0; /* Màu chữ vàng kem */
-    font-weight: bold; /* Làm đậm chữ "Bấm nút này nè" */
+    font-size: .85em;
+    color: #fffdd0;
+    font-weight: 700;
 }
-
 
 .mascot-info-text {
     text-align: left;
@@ -324,33 +315,33 @@ h1.reasons-slogan span {
 }
 
 .mascot-name {
-    font-size: 2.2em; /* CHỈNH SỬA: Tăng kích thước chữ (từ 1.8em) */
-    font-weight: 800; /* CHỈNH SỬA: Tăng độ đậm (nếu font có hỗ trợ) */
-    color: #FFFFFF; /* CHỈNH SỬA: Đổi màu chữ thành trắng tinh */
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .mascot-description {
-    font-size: 1.05em; /* CHỈNH SỬA: Tăng kích thước chữ (từ 0.9em) */
-    color: #FFFFFF; /* CHỈNH SỬA: Đổi màu chữ thành trắng tinh */
+    font-size: 1.05em;
+    color: #fff;
     line-height: 1.6;
 }
 
-/* STYLE CỦA VIDEO POPUP NÊN GIỮ NGUYÊN HOẶC CHỈNH SỬA NHỎ NẾU CẦN */
+/* Video Popup */
 .video-popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, .8);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity .3s, visibility .3s;
 }
 
 .video-popup-overlay.active {
@@ -363,9 +354,9 @@ h1.reasons-slogan span {
     background-color: #000;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
-    max-width: 500px; /* Ví dụ: Giảm kích thước tối đa xuống 650px */
-    width: 85%; /* Ví dụ: Giảm width xuống 85% */
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .7);
+    max-width: 500px;
+    width: 85%;
 }
 
 .video-popup-content video {
@@ -378,22 +369,22 @@ h1.reasons-slogan span {
 .close-popup-button {
     position: absolute;
     top: -30px;
-    right: 0px;
-    color: white;
+    right: 0;
+    color: #fff;
     font-size: 2em;
     cursor: pointer;
-    background: transparent;
+    background: 0 0;
     border: none;
     line-height: 1;
     z-index: 2001;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
 }
 
 .close-popup-button:hover {
-    color: #E24C4B;
+    color: #e24c4b;
 }
 
-/* Khung thông tin bên phải - trong suốt và định vị tuyệt đối */
+/* Mascot Stats (Right Side) */
 .mascot-stats-right {
     position: absolute;
     right: 100px;
@@ -403,48 +394,45 @@ h1.reasons-slogan span {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding-right: 20px;
-    max-width: 400px; /* Giữ nguyên max-width */
-
-    /* CHỈNH SỬA CÁC THUỘC TÍNH NÀY ĐỂ TẠO KHUNG SẪM MÀU NHẸ */
-    background-color: rgba(255, 251, 231, 0.2); /* Màu #FFFBE7 với 20% độ trong suốt */
+    max-width: 400px;
+    background-color: rgba(255, 251, 231, .2);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 251, 231, 0.4); /* Viền màu #FFFBE7 với 40% độ trong suốt */
+    border: 1px solid rgba(255, 251, 231, .4);
     border-radius: 15px;
     padding: 30px 25px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
 }
 
 .mascot-stats-right .stat-item {
-    background-color: transparent; /* Đảm bảo các mục stat riêng lẻ vẫn trong suốt */
+    background-color: transparent;
     border: none;
     box-shadow: none;
-    padding: 0; /* Đảm bảo không có padding thừa từ style cũ */
+    padding: 0;
     text-align: right;
 }
 
 .mascot-stats-right .stat-number {
     font-size: 2.8em;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #fff;
     margin-bottom: 5px;
 }
 
 .mascot-stats-right .stat-description {
     font-size: 1em;
-    color: #FFFFFF;
+    color: #fff;
 }
 
-/* Text "Made in Framer" */
+/* "Made By" Text */
 .made-by-text {
     position: absolute;
     bottom: 20px;
     right: 20px;
+    z-index: 10;
     display: flex;
     align-items: center;
-    font-size: 0.8em;
+    font-size: .8em;
     color: #999;
-    z-index: 10;
 }
 
 .made-by-text img {
@@ -452,28 +440,28 @@ h1.reasons-slogan span {
     margin-left: 5px;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
     background-color: #333;
-    color: #FFFBE7;
+    color: #fffbe7;
     text-align: center;
     padding: 30px 20px;
-    font-size: 0.9em;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    font-size: .9em;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, .1);
 }
 
 footer .social-links a {
-    color: #FFDF3D;
-    text-decoration: none;
+    color: #ffdf3d;
     margin: 0 10px;
-    transition: color 0.3s ease;
+    text-decoration: none;
+    transition: color .3s;
 }
 
 footer .social-links a:hover {
-    color: #FFF;
+    color: #fff;
 }
 
-/* Keyframe for animations */
+/* Animations */
 @keyframes slideFadeIn {
     from {
         opacity: 0;
@@ -485,72 +473,260 @@ footer .social-links a:hover {
     }
 }
 
-/* Responsive styles */
+/* Flowing Content Section */
+.flowing-content-section {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    text-align: center;
+    color: #333;
+    z-index: 1;
+    margin-top: -70px;
+}
+
+.flowing-section-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.flowing-section-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: -1;
+}
+
+.flowing-content-section .section-header-title {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, .5);
+    z-index: 2;
+}
+
+.flowing-track {
+    display: flex;
+    white-space: nowrap;
+    margin: 20px 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.flowing-content-wrapper {
+    display: flex;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+.flowing-track:hover .flowing-content-wrapper {
+    animation-play-state: paused;
+}
+
+.flowing-item {
+    flex-shrink: 0;
+    margin: 0 15px;
+    width: 250px;
+    height: 180px;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+    border: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flowing-item img,
+.flowing-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Scrolling Animations */
+@keyframes scrollRightToLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollLeftToRight {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.track-right-to-left .flowing-content-wrapper {
+    animation-name: scrollRightToLeft;
+    animation-duration: 60s;
+}
+
+.track-left-to-right .flowing-content-wrapper {
+    animation-name: scrollLeftToRight;
+    animation-duration: 60s;
+}
+
+/* Partners Section */
+.partners-section {
+    position: relative;
+    padding: 80px 30px;
+    text-align: center;
+    overflow: hidden;
+    color: #333;
+}
+
+.partners-section .section-header-title {
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, .5);
+    margin-bottom: 30px;
+}
+
+.partners-section-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.partners-intro {
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.partners-intro .intro-text {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.partners-intro .intro-description {
+    font-size: .95em;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* 3D Carousel */
+.carousel-3d-container {
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-3d-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    transform: none;
+    transition: none;
+}
+
+.carousel-3d-item {
+    position: absolute;
+    width: 280px;
+    height: 220px;
+    background-color: rgba(255, 251, 231, .2);
+    border: 1px solid rgba(255, 251, 231, .4);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+    transition: transform .5s ease-out, opacity .5s ease-out, z-index .5s ease-out;
+    cursor: pointer;
+    transform: translateX(0) scale(1) translateZ(0);
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-3d-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter .5s;
+}
+
+.carousel-3d-item:hover img {
+    filter: grayscale(0%);
+}
+
+.carousel-3d-item:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .2);
+}
+
+.carousel-3d-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(100, 100, 100, .7);
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8em;
+    z-index: 100;
+    transition: background-color .3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+
+.carousel-3d-nav:hover {
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.carousel-3d-nav.prev {
+    left: 10%;
+}
+
+.carousel-3d-nav.next {
+    right: 10%;
+}
+
+/* Placeholder for other pages */
+.main-content-placeholder {
+    min-height: calc(100vh - 80px - 100px);
+    padding-top: 80px;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- Media Queries --- */
+
+/* Tablet (max-width: 992px) */
 @media (max-width: 992px) {
-    /* Responsive styles for Mascot Info Section */
-    .mascot-info-section {
-        padding: 40px 20px 60px; /* Điều chỉnh padding cho mobile */
-    }
-    .section-header-title {
-        font-size: 2.2em; /* Nhỏ hơn trên tablet */
-        margin-bottom: 40px;
-        margin-top: 20px; /* Đẩy xuống một chút trên tablet */
-    }
-    .mascot-info-container {
-        flex-direction: column; /* Chuyển sang bố cục cột */
-        gap: 60px; /* Tăng khoảng cách giữa các phần */
-    }
-
-    .mascot-details-left,
-    .mascot-stats-right {
-        position: static; /* Bỏ định vị tuyệt đối, để chúng hiển thị bình thường */
-        transform: none; /* Bỏ transform */
-        width: 100%; /* Chiếm toàn bộ chiều rộng */
-        max-width: 400px; /* Giới hạn chiều rộng */
-        padding: 25px 20px; /* Giảm padding trên mobile */
-        background-color: rgba(0, 0, 0, 0.2); /* Giữ hiệu ứng này trên mobile */
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        margin: 0 auto; /* Căn giữa khung trên mobile */
-    }
-
-    .mascot-details-left { /* Đổi tên class nếu bạn đã đổi trong HTML */
-        order: 2; /* Đặt phần thông tin trái xuống dưới mascot */
-        margin-top: 50px; /* Khoảng cách sau mascot */
-    }
-
-    .mascot-main-display {
-        order: 1; /* Đặt mascot lên trên */
-        margin: 0; /* Bỏ margin âm nếu có */
-    }
-
-    .mascot-stats-right {
-        order: 3; /* Đặt phần thông tin phải xuống dưới cùng */
-        margin-top: 30px; /* Khoảng cách sau phần thông tin trái */
-    }
-
-    .mascot-card {
-        margin: 0 auto 20px auto; /* Căn giữa thẻ và tạo khoảng cách */
-    }
-
-    .mascot-info-text {
-        text-align: center; /* Căn giữa chữ */
-    }
-
-    .mascot-stats-right .stat-item {
-        text-align: center; /* Căn giữa các mục thống kê */
-    }
-
-    .made-by-text {
-        position: static; /* Bỏ định vị tuyệt đối */
-        margin-top: 50px; /* Khoảng cách từ nội dung chính */
-        justify-content: center; /* Căn giữa */
-        right: auto; /* Bỏ right */
-        bottom: auto; /* Bỏ bottom */
-    }
-
-    /* Responsive styles for general elements (copy from original @media 768px) */
     .navbar {
         padding: 0 20px;
         height: 70px;
@@ -562,15 +738,15 @@ footer .social-links a:hover {
 
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 70px; /* Cập nhật theo chiều cao mới của navbar */
         left: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, .85); /* Tăng độ mờ cho dễ đọc */
         flex-direction: column;
         align-items: center;
         display: none;
         padding: 20px 0;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
         z-index: 990;
         transform: none;
         margin: 0;
@@ -578,28 +754,19 @@ footer .social-links a:hover {
 
     .nav-links.show {
         display: flex;
-        animation: slideFadeIn 0.4s ease-in-out;
+        animation: .4s ease-in-out slideFadeIn;
     }
 
     .nav-links a {
         font-size: 16px;
-        padding: 10px 0;
+        padding: 12px 0; /* Tăng padding để dễ bấm hơn */
         width: 100%;
+        color: #fffdd0;
         text-align: center;
-        color: #FFFDD0;
     }
 
     .hamburger {
         display: flex;
-    }
-
-    .video-hero {
-        margin-top: 0;
-        height: 100vh;
-    }
-
-    .hero-content {
-        padding: 15px;
     }
 
     .hero-content h1 {
@@ -610,459 +777,224 @@ footer .social-links a:hover {
         font-size: 1.2em;
     }
 
-    .hero-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 576px) {
-
+    /* ---- TỐI ƯU QUAN TRỌNG CHO MASCOT SECTION ---- */
     .mascot-info-section {
-        padding: 30px 15px 50px; /* Nhỏ hơn trên điện thoại */
+        margin-top: -70px; /* Đẩy section lên cao 70px để tạo hiệu ứng gối */
+        position: relative; /* Đảm bảo section hiển thị trên cùng */
+        padding: 80px 20px 60px; /* Tăng padding top để không bị navbar che */
+        z-index: 2; /* Đặt z-index cao hơn section hero */
     }
 
     .section-header-title {
-        font-size: 1.8em; /* Nhỏ hơn trên điện thoại */
-        margin-bottom: 30px;
-        margin-top: 15px; /* Đẩy xuống một chút trên mobile nhỏ */
-    }
-    .main-mascot-image {
-        max-width: 300px;
-    }
-
-    .mascot-name {
-        font-size: 1.5em;
-    }
-
-    .mascot-description {
-        font-size: 0.85em;
-    }
-
-    .mascot-stats-right .stat-number {
         font-size: 2.2em;
+        margin-bottom: 20px;
+        margin-top: 0;
     }
 
-    .mascot-stats-right .stat-description {
-        font-size: 0.9em;
+    h1.reasons-slogan {
+        font-size: 1.5em; /* Giảm kích thước font */
     }
 
-    /* Điều chỉnh các phần tử cột trên mobile nhỏ hơn */
+    .mascot-info-container {
+        flex-direction: column;
+        gap: 40px; /* Giảm khoảng cách giữa các phần tử */
+    }
+
+    /* Đặt lại position cho các khối thông tin */
     .mascot-details-left,
     .mascot-stats-right {
-        max-width: 350px; /* Giảm max-width cho màn hình điện thoại */
-        padding: 20px 15px; /* Giảm padding */
+        position: static; /* Quan trọng: Chuyển về layout tĩnh */
+        transform: none;
+        width: 100%;
+        max-width: 450px; /* Giới hạn chiều rộng tối đa */
+        padding: 25px 20px;
+        background-color: rgba(0, 0, 0, .3);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, .1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+        margin: 0 auto;
     }
-}
 
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2em;
+    .mascot-main-display {
+        order: 1;
+        margin: 0;
+        max-width: 500px;
     }
 
-    .hero-content p {
-        font-size: 1em;
+    .mascot-details-left {
+        order: 2;
+        margin-top: 20px; /* Giảm margin top */
     }
+
     .mascot-stats-right {
-        padding: 20px 15px;
+        order: 3;
+        margin-top: 20px;
     }
-    .section-header-title {
-        font-size: 1.5em; /* Rất nhỏ trên màn hình rất nhỏ */
-        margin-top: 10px; /* Đẩy xuống ít hơn trên mobile siêu nhỏ */
+
+    .main-mascot-video {
+        max-width: 100%; /* Đảm bảo video co dãn theo container */
     }
-}
-/* Flowing Content Section Styles */
-.flowing-content-section {
-    position: relative; /* Quan trọng: Để lớp phủ hoạt động */
-    overflow: hidden; /* RẤT QUAN TRỌNG: Ẩn các phần tử tràn ra ngoài */
 
-    padding: 80px 0; /* Padding trên dưới, 0 padding ngang vì nội dung sẽ tràn */
-    text-align: center;
-    color: #333; /* Đổi màu chữ mặc định của section thành đen để dễ đọc trên nền vàng */
-    z-index: 1; /* Đảm bảo nội dung nổi lên trên nền và lớp phủ */
-    margin-top: -70px;
-}
-
-/* THÊM STYLE MỚI CHO ẢNH NỀN GỌI TRỰC TIẾP TRONG HTML */
-.flowing-section-background-image {
-    position: absolute; /* Quan trọng: Định vị tuyệt đối để nó nằm dưới nội dung */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Đảm bảo ảnh bao phủ toàn bộ section */
-    z-index: -2; /* Đặt dưới lớp phủ và dưới nội dung */
-    /* Nếu ảnh nền của bạn quá sáng, có thể làm tối trực tiếp bằng filter: brightness() */
-    /* filter: brightness(0.6); */
-}
-
-/* THÊM STYLE MỚI CHO LỚP PHỦ MÀU VÀNG KEM */
-.flowing-section-overlay {
-    content: ''; /* Cần thiết cho div này hoạt động như một lớp phủ */
-    position: absolute; /* Định vị tuyệt đối so với flowing-content-section */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2); /* Lớp phủ màu #FFFBE7 với 50% độ trong suốt */
-    z-index: -1; /* Đặt lớp phủ dưới nội dung nhưng trên ảnh nền */
-}
-
-/* Tiêu đề cho section này */
-.flowing-content-section .section-header-title {
-    color: white; /* Đổi màu chữ tiêu đề thành đen hoặc xám đậm */
-    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5); /* Đổi bóng đổ để nổi bật trên nền sáng */
-    z-index: 2; /* Đảm bảo tiêu đề nằm trên lớp phủ */
-}
-
-.flowing-track {
-    display: flex;
-    white-space: nowrap; /* Ngăn chặn các item xuống dòng */
-    margin: 20px 0; /* Khoảng cách giữa các dòng */
-    overflow: hidden; /* Ẩn phần tràn của animation */
-    pointer-events: none; /* Không cho phép tương tác với các item khi chúng trôi qua */
-    /* Có thể điều chỉnh chiều cao của track nếu bạn muốn */
-    /* height: 200px; */
-}
-
-.flowing-content-wrapper {
-    display: flex;
-    animation-timing-function: linear; /* Chuyển động tuyến tính */
-    animation-iteration-count: infinite; /* Lặp lại vô hạn */
-    animation-play-state: running; /* Đảm bảo animation luôn chạy */
-}
-
-.flowing-track:hover .flowing-content-wrapper {
-    animation-play-state: paused; /* Tạm dừng animation khi hover vào track */
-}
-
-.flowing-item {
-    flex-shrink: 0; /* Ngăn chặn các item bị co lại */
-    margin: 0 15px; /* Khoảng cách giữa các item */
-    width: 250px; /* Chiều rộng cố định cho mỗi item (có thể điều chỉnh) */
-    height: 180px; /* Chiều cao cố định (có thể điều chỉnh) */
-    background-color: rgba(255, 255, 255, 0.5); /* Nền cho item trống hoặc loading */
-    border-radius: 10px;
-    overflow: hidden; /* Đảm bảo ảnh/video không tràn ra ngoài item */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.flowing-item img,
-.flowing-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Đảm bảo ảnh/video lấp đầy item, cắt bớt nếu cần */
-    border-radius: 10px; /* Kế thừa bo góc */
-}
-
-/* KEYFRAMES CHO DÒNG CUỘN TỪ PHẢI SANG TRÁI */
-@keyframes scrollRightToLeft {
-    from {
-        transform: translateX(0%);
+    .mascot-info-text,
+    .mascot-stats-right .stat-item {
+        text-align: center;
     }
-    to {
-        transform: translateX(-50%); /* Cuộn hết một nửa nội dung để tạo loop */
+
+    .mascot-card {
+        margin: 0 auto 20px;
     }
-}
 
-/* KEYFRAMES CHO DÒNG CUỘN TỪ TRÁI SANG PHẢI */
-@keyframes scrollLeftToRight {
-    from {
-        transform: translateX(-50%); /* Bắt đầu từ vị trí giữa của nội dung lặp lại */
+    .made-by-text {
+        display: none; /* Ẩn trên mobile cho gọn */
     }
-    to {
-        transform: translateX(0%); /* Kết thúc ở vị trí ban đầu */
-    }
-}
 
-/* ÁP DỤNG ANIMATION CHO CÁC DÒNG */
-.track-right-to-left .flowing-content-wrapper {
-    animation-name: scrollRightToLeft;
-    animation-duration: 60s; /* Tốc độ cuộn (thời gian dài hơn = chậm hơn) */
-}
-
-.track-left-to-right .flowing-content-wrapper {
-    animation-name: scrollLeftToRight;
-    animation-duration: 60s; /* Tốc độ cuộn */
-}
-
-
-/* Responsive Adjustments for Flowing Content Section */
-@media (max-width: 992px) {
-    .flowing-content-section {
-        padding: 60px 0;
-    }
-    .flowing-content-section .section-header-title {
-        font-size: 2em;
-        margin-bottom: 40px;
-    }
-    .flowing-item {
-        width: 200px; /* Giảm kích thước item trên tablet */
-        height: 150px;
-        margin: 0 10px;
-    }
-    .track-right-to-left .flowing-content-wrapper,
-    .track-left-to-right .flowing-content-wrapper {
-        animation-duration: 40s; /* Tăng tốc độ cuộn trên mobile */
-    }
-}
-
-@media (max-width: 576px) {
-    .flowing-content-section {
-        padding: 40px 0;
-    }
-    .flowing-content-section .section-header-title {
-        font-size: 1.8em;
-        margin-bottom: 30px;
-    }
-    .flowing-item {
-        width: 180px; /* Giảm kích thước item trên điện thoại */
-        height: 120px;
-        margin: 0 8px;
-    }
-    .track-right-to-left .flowing-content-wrapper,
-    .track-left-to-right .flowing-content-wrapper {
-        animation-duration: 30s; /* Tăng tốc độ cuộn trên điện thoại */
-    }
-}
-
-@media (max-width: 480px) {
-    .flowing-content-section .section-header-title {
-        font-size: 1.5em;
-        margin-bottom: 25px;
-    }
-    .flowing-item {
-        width: 150px;
-        height: 100px;
-        margin: 0 5px;
-    }
-    .track-right-to-left .flowing-content-wrapper,
-    .track-left-to-right .flowing-content-wrapper {
-        animation-duration: 25s; /* Tăng tốc độ cuộn trên màn hình rất nhỏ */
-    }
-}
-/* Partners Section Styles */
-.partners-section {
-
-    position: relative; /* Quan trọng: Để các phần tử con (img nền, overlay, nội dung) có thể định vị absolute */
-    padding: 80px 30px;
-    text-align: center;
-    overflow: hidden;
-    color: #333; /* Màu chữ mặc định cho section này */
-}
-
-
-/* THÊM STYLE MỚI CHO ẢNH NỀN GỌI TRỰC TIẾP TRONG HTML */
-.partners-section-background-image {
-    position: absolute; /* Quan trọng: Định vị tuyệt đối để nó nằm dưới nội dung */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Đảm bảo ảnh bao phủ toàn bộ section */
-    z-index: -2; /* Đặt dưới lớp phủ và dưới nội dung */
-    /* Nếu ảnh nền của bạn quá sáng, có thể làm tối trực tiếp bằng filter: brightness() */
-    /* filter: brightness(0.6); */
-}
-
-
-/* Tiêu đề cho section này (CÁC ĐỐI TÁC ĐÃ ĐỒNG HÀNH CÙNG TMA TOURIST) */
-.partners-section .section-header-title {
-    color: #333; /* Màu đen/xám đậm cho tiêu đề trên nền sáng */
-    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5); /* Bóng đổ trắng nhẹ */
-    margin-bottom: 30px; /* Khoảng cách dưới tiêu đề đến intro text */
-}
-
-/* Giới thiệu về đối tác */
-.partners-intro {
-    max-width: 800px;
-    margin: 0 auto 50px auto; /* Căn giữa và khoảng cách dưới carousel */
-}
-
-.partners-intro .intro-text {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.partners-intro .intro-description {
-    font-size: 0.95em;
-    line-height: 1.6;
-    color: #666;
-}
-
-/* CAROUSEL STACKING CARD STYLES */
-.carousel-3d-container {
-    width: 100%; /* Đảm bảo nó chiếm 100% chiều rộng có sẵn */
-    max-width: 900px; /* Giới hạn chiều rộng tối đa của container */
-    height: 300px;
-    margin: 0 auto; /* Đảm bảo CONTAINER NÀY LUÔN CĂN GIỮA */
-    position: relative;
-    overflow: hidden; /* QUAN TRỌNG: Ẩn các phần tử con tràn ra khỏi container */
-    /* background-color: lightblue; */ /* Tạm thời thêm màu nền để dễ debug */
-
-}
-
-
-.carousel-3d-wrapper {
-    display: flex; /* Giữ flex để căn giữa các item */
-    justify-content: center; /* Căn giữa các item ban đầu */
-    align-items: center;
-    width: 100%; /* Quan trọng: Wrapper chiếm 100% của container */
-    height: 100%;
-    position: relative; /* Cho phép các item bên trong định vị absolute */
-    /* LOẠI BỎ bất kỳ transform nào trên wrapper ở đây, JS sẽ điều khiển */
-    left: 0; /* Đảm bảo không có dịch chuyển ngang ban đầu */
-    transform: none; /* Đảm bảo không có transform ban đầu */
-    transition: none; /* Transition sẽ được JS điều khiển */
-}
-
-
-.carousel-3d-item {
-    position: absolute; /* Quan trọng: để các thẻ có thể chồng lên nhau */
-    width: 280px; /* TĂNG KÍCH THƯỚC THẺ */
-    height: 220px; /* TĂNG KÍCH THƯỚC THẺ */
-    background-color: rgba(255, 251, 231, 0.2); /* Màu #FFFBE7 với 20% độ trong suốt */
-    border: 1px solid rgba(255, 251, 231, 0.4); /* Viền màu #FFFBE7 với 40% độ trong suốt */
-    border-radius: 15px; /* Bo góc nhiều hơn */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Bóng đổ lớn hơn */
-
-    /* Transition cho các hiệu ứng scale, transform, opacity, z-index */
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out, z-index 0.5s ease-out;
-    cursor: pointer;
-
-    /* Transform ban đầu sẽ được JS ghi đè */
-    transform: translateX(0px) scale(1) translateZ(0px); /* Reset transform */
-    opacity: 1; /* Reset opacity */
-    z-index: 1; /* Reset z-index */
-}
-
-.carousel-3d-item img {
-    max-width: 100%; /* Giảm kích thước logo để có không gian cho text */
-    max-height: 100%;
-    object-fit: contain;
-    filter: grayscale(100%);
-    transition: filter 0.5s ease;
-}
-
-.carousel-3d-item:hover img {
-    filter: grayscale(0%);
-}
-.carousel-3d-item:hover {
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Bóng đổ mạnh hơn khi hover */
-}
-
-
-/* NAVIGATION BUTTONS */
-.carousel-3d-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(100, 100, 100, 0.7); /* Màu xám đậm hơn một chút */
-    color: white;
-    border: none;
-    padding: 12px 18px; /* Nút lớn hơn */
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.8em; /* Font to hơn */
-    z-index: 100;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.carousel-3d-nav:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.carousel-3d-nav.prev {
-    left: 10%; /* Điều chỉnh vị trí nút để không bị sát mép */
-}
-
-.carousel-3d-nav.next {
-    right: 10%; /* Điều chỉnh vị trí nút để không bị sát mép */
-}
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .carousel-3d-container {
-        height: 280px;
-    }
+    /* Carousel */
     .carousel-3d-item {
         width: 260px;
         height: 200px;
     }
+
     .carousel-3d-nav.prev {
         left: 5%;
     }
+
     .carousel-3d-nav.next {
         right: 5%;
     }
 }
 
+
+/* Small Tablet & Large Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+    .section-header-title {
+        font-size: 1.8em;
+    }
+
+    h1.reasons-slogan {
+        font-size: 1.3em;
+        padding: 5px 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    /* Flowing content */
+    .flowing-item {
+        width: 180px;
+        height: 120px;
+    }
+
+    /* Carousel */
     .carousel-3d-container {
-        max-width: 100%; /* Cho phép chiếm toàn bộ chiều rộng */
         height: 250px;
     }
+
     .carousel-3d-item {
         width: 240px;
         height: 180px;
     }
+
     .carousel-3d-nav {
         padding: 10px 15px;
         font-size: 1.5em;
     }
 }
 
-@media (max-width: 576px) {
+
+/* iPhone 11 Pro Max và nhỏ hơn (max-width: 428px) */
+@media (max-width: 428px) {
+    .navbar {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        top: 60px;
+    }
+
+    .navbar-brand img {
+        height: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+        line-height: 1.4;
+    }
+
+    .hero-button {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+
+    .section-header-title {
+        font-size: 1.5em;
+    }
+
+    h1.reasons-slogan {
+        font-size: 1.1em;
+    }
+
+    .mascot-info-section {
+        padding: 60px 15px 40px;
+    }
+
+    .mascot-details-left,
+    .mascot-stats-right {
+        padding: 20px 15px;
+    }
+
+    .mascot-name {
+        font-size: 1.5em;
+    }
+
+    .mascot-stats-right .stat-number {
+        font-size: 2em;
+    }
+
+    .mascot-stats-right .stat-description {
+        font-size: .85em;
+    }
+
+    /* Flowing content */
+    .flowing-item {
+        width: 150px;
+        height: 100px;
+        margin: 0 8px;
+    }
+
+    /* Carousel */
     .carousel-3d-container {
-        height: 220px;
+        height: 200px;
     }
 
     .carousel-3d-item {
-        width: 220px;
-        height: 160px;
+        width: 180px;
+        height: 130px;
     }
 
     .carousel-3d-nav {
-        font-size: 1.2em;
-        padding: 8px 12px;
+        font-size: 1em;
     }
-}
-body {
-    opacity: 0;
-    transition: opacity 0.8s ease;
-}
 
-body.loaded {
-    opacity: 1;
-}
-/* Main Content Placeholder for Sub-pages */
-.main-content-placeholder {
-    min-height: calc(100vh - 80px - 100px); /* 100vh - chiều cao navbar - chiều cao footer giả định */
-    padding-top: 80px; /* Đẩy nội dung xuống dưới navbar */
-    background-color: #ffffff; /* Nền trắng cho các trang con */
-    color: #333; /* Màu chữ mặc định cho nội dung */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+    .carousel-3d-nav.next {
+        right: 5px; /* Điều chỉnh lại vị trí nếu cần */
+    }
 
-/* Responsive cho main-content-placeholder */
-@media (max-width: 768px) {
-    .main-content-placeholder {
-        min-height: calc(100vh - 70px - 100px); /* Chiều cao navbar mobile */
-        padding-top: 70px;
+    /* Nút liên hệ nổi */
+    .floating-contact {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+
+    .float-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .float-btn img {
+        width: 28px;
+        height: 28px;
     }
 }

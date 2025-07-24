@@ -14,8 +14,7 @@
 </head>
 <body>
 
-<img src="/images/background-about.png" alt="Background" class="fixed-bg">
-<!-- NAVBAR đặt trước nội dung chính -->
+<img src="/images/background-about.webp" alt="Background" class="fixed-bg">
 <nav class="navbar">
   <div class="navbar-brand">
     <a href="index.html">
@@ -26,11 +25,10 @@
     <a href="index.html">Trang chủ</a>
     <a href="about.html" >Về TMA</a>
     <div class="nav-item dropdown">
-      <a href="service1.html" class="nav-link active ">
+      <a href="service1.html" class="nav-link active" id="services-menu-toggle">
         Dịch vụ <i class="fa-solid fa-caret-down"></i>
       </a>
       <div class="dropdown-menu">
-        <!-- Thay đổi tên và đường dẫn file cho phù hợp -->
         <a href="service1.html">Company Trip & Group Tour</a>
         <a href="service2.html">Event & Team Building & Gala</a>
         <a href="service3.html">Thiết Kế Tour Riêng Theo Yêu Cầu</a>
@@ -39,7 +37,7 @@
     <a href="blog.html">Cẩm nang du lịch</a>
     <a href="contact.html">Liên hệ</a>
   </div>
-  <div class="hamburger" onclick="toggleMenu()">
+  <div class="hamburger">
     <div></div>
     <div></div>
     <div></div>
@@ -57,7 +55,7 @@
   <section class="service-detail-section">
     <!-- GIỚI THIỆU DỊCH VỤ -->
     <h1 class ="gallery-title reveal-fade-up" > QUÊN ĐI NHỮNG TRÒ TEAM BUILDING NHÀM CHÁN!</h1>
-    <p class="service-subtitle">Với nền tảng sáng tạo - chuyên môn tổ chức - và tư duy Đạo diễn hiện đại</p>
+    <p class="service-subtitle creative-subtitle">Với nền tảng sáng tạo - chuyên môn tổ chức - và tư duy Đạo diễn hiện đại</p>
     <div class="service-intro reveal-fade-up">
       <p>TMA Tourist thiết kế những chương trình như một "sân khấu" để mỗi cá nhân đều tỏa sáng, và sức mạnh tập thể được đánh thức mạnh mẽ.</p>
     </div>
@@ -112,7 +110,7 @@
 
     <!-- THƯ VIỆN ẢNH DỰ ÁN ĐÃ THỰC HIỆN -->
     <div class="project-gallery">
-      <h2 class="gallery-title reveal-fade-up">Các Chương Trình Team Building Đã Thực Hiện</h2>
+      <h2 class="gallery-title reveal-fade-up">Team Building & Event Đã Thực Hiện</h2>
       <div class="gallery-grid">
         <div class="gallery-item reveal-fade-up" data-gallery="Big 8" data-title="BIG 8">
           <img src="/images/ServicesPage/Big_8_images/header.webp" alt="Big 8 Team Building">
@@ -120,20 +118,47 @@
             <h4 class="gallery-item-title">BIG 8</h4>
           </div>
         </div>
-        <div class="gallery-item reveal-fade-up" data-gallery="PEPSICO">
-          <img src="https://placehold.co/600x400/e67e22/ffffff?text=Boehringer" alt="Boehringer Team Building">
+        <div class="gallery-item reveal-fade-up" data-gallery="PEPSICO" data-title="PEPSICO">
+          <img src="/images/ServicesPage.PEPSICO/header.webp" alt="PEPSICO Team Building">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">PEPSICO</h4>
+          </div>
         </div>
-        <div class="gallery-item reveal-fade-up" data-gallery="sony">
-          <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Sony" alt="Sony Team Building">
+        <div class="gallery-item reveal-fade-up" data-gallery="The Best Vape" data-title="The Best vape">
+          <img src="/images/ServicesPage.TheBestVape/header.webp" alt="The Best Vape Team Building">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">The BEST VAPE</h4>
+          </div>
         </div>
-        <div class="gallery-item reveal-fade-up" data-gallery="tetrapak">
-          <img src="https://placehold.co/600x400/9b59b6/ffffff?text=Tetra+Pak" alt="Tetra Pak Town Hall Meeting">
+        <div class="gallery-item reveal-fade-up" data-gallery="HENIKEN" data-title="HENIKEN">
+          <img src="/images/ServicesPage.HENIKEN/header.webp" alt="HENIKEN Team Building">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">HENIKEN</h4>
+          </div>
         </div>
-        <div class="gallery-item reveal-fade-up" data-gallery="agribank">
-          <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Agribank" alt="Agribank Team Building">
+        <div class="gallery-item reveal-fade-up" data-gallery="BNIEvent" data-title="BNI Event">
+          <img src="/images/ServicesPage.BNIEvent/header.webp" alt="BNI Event">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">BNI Event</h4>
+          </div>
         </div>
-        <div class="gallery-item reveal-fade-up" data-gallery="vus">
-          <img src="https://placehold.co/600x400/1abc9c/ffffff?text=VUS" alt="VUS Team Building">
+        <div class="gallery-item reveal-fade-up" data-gallery="CEOTD21Event" data-title="CEOTD21 Event">
+          <img src="/images/ServicesPage.CEOTD21Event/header.webp" alt="CEOTD21 Event">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">CEOTD21 Event</h4>
+          </div>
+        </div>
+        <div class="gallery-item reveal-fade-up" data-gallery="HaiAnhCompany" data-title="Công ty Hải Anh">
+          <img src="/images/ServicesPage.HaiAnhCompany/header.webp" alt="HaiAnh Company Trip">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Hải Anh Company</h4>
+          </div>
+        </div>
+        <div class="gallery-item reveal-fade-up" data-gallery="BNI" data-title="BNI">
+          <img src="/images/ServicesPage.BNI/header1.webp" alt="BNI Company Trip">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">BNI</h4>
+          </div>
         </div>
       </div>
     </div>
@@ -153,12 +178,38 @@
     <img src="/images/contactPage/phone.png" alt="Phone">
   </a>
 </div>
-<footer>
-  <p>@ 2025 Nguyen Dinh Lam. Bảo lưu mọi quyền.</p>
-  <div>
-    <a href="https://www.facebook.com/dulichtma" style="color:#fff; text-decoration:none;">Facebook</a> |
-    <a href="https://zalo.me/0988153335" style="color:#fff; text-decoration:none;">Zalo</a> |
-    <a href="tel:0988153335" style="color:#fff; text-decoration:none;">Calling</a>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+
+      <div class="footer-col about">
+        <img src="/images/logo.webp" alt="Logo Công ty" class="footer-logo">
+        <h2><strong>CÔNG TY TNHH TRUYỀN THÔNG DU LỊCH TMA</strong></h2>
+        <p><i class="fas fa-map-marker-alt"></i>17 Đường Số 1, Bình Hưng, Bình Chánh, Hồ Chí Minh, Việt Nam</p>
+        <p><i class="fas fa-phone-alt"></i><a href="tel:0988153335" style="color:#bbb; text-decoration:none;">0988 153 335</a></p>
+        <p><i class="fas fa-envelope"></i><a href="mailto:tmatourist@gmail.com" style="color:#bbb; text-decoration:none;">tmatourist@gmail.com</a></p>
+        <p><i class="fas fa-barcode"></i>Mã số thuế: 0317292143</p>
+      </div>
+
+      <div class="footer-col map">
+        <h4>Vị trí văn phòng</h4>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.1615998327056!2d106.65929801162211!3d10.722016289379399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f001ab1c805%3A0x134192f34551c051!2sC%C3%B4ng%20ty%20TMA%20Tourist!5e0!3m2!1svi!2s!4v1752767667465!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/dulichtma" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/tma_tourist/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@TMATOURIST" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://zalo.me/0988153335" aria-label="Zalo" title="Zalo"><i class="fa-solid fa-comment-dots"></i></a>
+        <a href="https://www.tiktok.com/@tmatourist" aria-label="Tiktok" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p>Bản quyền &copy; 2025 thuộc về CÔNG TY TNHH TRUYỀN THÔNG DU LỊCH TMA.</p>
+    </div>
   </div>
 </footer>
 
@@ -184,7 +235,6 @@
 </div>
 
 <script src="/js/index.js" defer></script>
-<script src="/js/blog.js" defer></script>
 <script src="/js/about.js" defer></script>
 <script src="/js/service.js" defer></script>
 </body>

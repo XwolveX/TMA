@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Dịch Vụ - TMA Tourist</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Trip & Group Tour</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <link rel="stylesheet" href="/css/index.css" />
-  <link rel="stylesheet" href="/css/contact.css" />
-  <link rel="stylesheet" href="/css/about.css" />
   <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/about.css" />
+  <link rel="stylesheet" href="/css/contact.css" />
   <link rel="stylesheet" href="/css/service.css" />
 </head>
 <body>
 
-<img src="/images/background-about.png" alt="Background" class="fixed-bg">
+<img src="/images/background-about.webp" alt="Background" class="fixed-bg">
+
 <!-- NAVBAR đặt trước nội dung chính -->
 <nav class="navbar">
   <div class="navbar-brand">
@@ -26,11 +27,10 @@
     <a href="index.html">Trang chủ</a>
     <a href="about.html" >Về TMA</a>
     <div class="nav-item dropdown">
-      <a href="service1.html" class="nav-link ">
+      <a href="service1.html" class="nav-link active" id="services-menu-toggle">
         Dịch vụ <i class="fa-solid fa-caret-down"></i>
       </a>
       <div class="dropdown-menu">
-        <!-- Thay đổi tên và đường dẫn file cho phù hợp -->
         <a href="service1.html">Company Trip & Group Tour</a>
         <a href="service2.html">Event & Team Building & Gala</a>
         <a href="service3.html">Thiết Kế Tour Riêng Theo Yêu Cầu</a>
@@ -39,12 +39,13 @@
     <a href="blog.html">Cẩm nang du lịch</a>
     <a href="contact.html">Liên hệ</a>
   </div>
-  <div class="hamburger" onclick="toggleMenu()">
+  <div class="hamburger">
     <div></div>
     <div></div>
     <div></div>
   </div>
 </nav>
+
 <!-- HEADER CHO TRANG DỊCH VỤ -->
 <header class="header-content reveal-on-scroll">
   <h2 class="service-title"> COMPANY TRIP & GROUP TOUR</h2>
@@ -56,41 +57,68 @@
   <!-- NỘI DUNG CHI TIẾT DỊCH VỤ -->
   <section class="service-detail-section">
     <p class="gallery-title reveal-fade-up">HÀNH TRÌNH GẮN KẾT - NÂNG TẦM DOANH NGHIỆP</p>
-    <!-- GIỚI THIỆU DỊCH VỤ (Giữ nguyên) -->
+    <!-- GIỚI THIỆU DỊCH VỤ -->
     <div class="service-intro reveal-fade-up">
       <p>Một chuyến đi không chỉ là dịp nghỉ dưỡng – đó là một khoản đầu tư chiến lược vào văn hóa doanh nghiệp và sự phát triển của con người.</p>
       <p>TMA Tourist tự hào đồng hành cùng quý công ty trong những hành trình kết nối, tái tạo năng lượng và xây dựng những giá trị chung bền vững.</p>
     </div>
 
-    <!-- === THAY ĐỔI Ở ĐÂY === -->
-    <!-- THƯ VIỆN ẢNH (Chỉ hình ảnh) -->
+    <!-- THƯ VIỆN ẢNH -->
     <div class="project-gallery">
-      <!-- Đổi tiêu đề -->
-      <h2 class="gallery-title reveal-fade-up">Bộ Sưu Tập Hình Ảnh</h2>
+      <h2 class="gallery-title reveal-fade-up">COMPANY Trip & Group Tour Đã Thực Hiện</h2>
       <div class="gallery-grid">
-        <!-- Bỏ phần div.gallery-caption -->
-        <div class="gallery-item reveal-fade-up">
-          <img src="https://placehold.co/600x400/3498db/ffffff?text=Dự+án+1" alt="Hình ảnh dự án 1">
+        <div class="gallery-item reveal-fade-up" data-gallery="PEPSICOControl" data-title="PEPSICO Control">
+          <img src="/images/ServicesPage.PEPSICOControl/header.webp" alt="PEPSICO Control company trip">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">PEPSICO Control Team</h4>
+          </div>
         </div>
-        <div class="gallery-item reveal-fade-up">
-          <img src="https://placehold.co/600x400/e67e22/ffffff?text=Dự+án+2" alt="Hình ảnh dự án 2">
+        <div class="gallery-item reveal-fade-up" data-gallery="ThangLoiGroup" data-title="Thắng Lợi Group">
+          <img src="/images/ServicesPage.ThangLoiGroup/header.webp" alt="ThangLoiGroup Company trip">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">THẮNG LỢI GROUP</h4>
+          </div>
         </div>
-        <div class="gallery-item reveal-fade-up">
-          <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Dự+án+3" alt="Hình ảnh dự án 3">
+        <div class="gallery-item reveal-fade-up" data-gallery="TAX" data-title="TAX">
+          <img src="/images/ServicesPage.TAX/header.webp" alt="TAX COMPANY TRIP">
+          <div class="gallery-item-overlay"><h4 class="gallery-item-title">TAX </h4></div>
         </div>
-        <div class="gallery-item reveal-fade-up">
-          <img src="https://placehold.co/600x400/9b59b6/ffffff?text=Dự+án+4" alt="Hình ảnh dự án 4">
+        <div class="gallery-item reveal-fade-up" data-gallery="DAICHI" data-title="DAICHI">
+          <img src="/images/ServicesPage.DAICHI/header.webp" alt="DAICHI COMPANY TRIP">
+          <div class="gallery-item-overlay"><h4 class="gallery-item-title">DAICHI</h4></div>
         </div>
-        <div class="gallery-item reveal-fade-up">
-          <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Dự+án+5" alt="Hình ảnh dự án 5">
+          <div class="gallery-item reveal-fade-up" data-gallery="PEPSICOMarketing" data-title="PEPSICO Marketing Team">
+            <img src="/images/ServicesPage.PEPSICOMarketing/header.webp" alt="PEPSICO Marketing company trip">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">PEPSICO Marketing Team</h4>
+            </div>
+          </div>
+        <div class="gallery-item reveal-fade-up" data-gallery="CPC1Hanoi" data-title="Công ty dược phẩm CPC1 Hanoi">
+          <img src="/images/ServicesPage.CPC1Hanoi/header.webp" alt="Công ty dược phẩm CP1 Hà Nội company trip">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Công ty dược phẩm CPC1</h4>
+          </div>
         </div>
-        <div class="gallery-item reveal-fade-up">
-          <img src="https://placehold.co/600x400/1abc9c/ffffff?text=Dự+án+6" alt="Hình ảnh dự án 6">
+        <div class="gallery-item reveal-fade-up" data-gallery="ChienBinhThep" data-title="Team Chiến Binh Thép">
+          <img src="/images/ServicesPage.ChienBinhThep/header.webp" alt="ChienBinhThep Group Tour">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Team Chiến Binh Thép</h4>
+          </div>
+        </div>
+        <div class="gallery-item reveal-fade-up" data-gallery="GD3TheHe" data-title="Gia đình 3 thế hệ">
+          <img src="/images/ServicesPage.GD3TheHe/header.webp" alt="GD3TheHe Group Tour">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Gia Đình 3 Thế Hệ</h4>
+          </div>
+        </div>
+        <div class="gallery-item reveal-fade-up" data-gallery="HS12" data-title="Học sinh lớp 12">
+          <img src="/images/ServicesPage.HS12/header.webp" alt="HS 12 Group Tour">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Học Sinh lớp 12</h4>
+          </div>
         </div>
       </div>
     </div>
-    <!-- === KẾT THÚC THAY ĐỔI === -->
-
   </section>
 
 </main>
@@ -99,28 +127,72 @@
 <!-- ====================================================== -->
 <div class="floating-contact">
   <!-- Nút Zalo -->
-  <!-- Thay YOUR_PHONE_NUMBER bằng SĐT đăng ký Zalo của bạn (không có số 0 ở đầu) -->
   <a href="https://zalo.me/84988153335" class="float-btn zalo-float" target="_blank" aria-label="Chat Zalo">
-    <!-- Thay bằng đường dẫn đến icon Zalo của bạn -->
     <img src="/images/contactPage/zalo.webp" alt="Zalo">
   </a>
   <!-- Nút Gọi điện -->
   <a href="tel:0988153335" class="float-btn phone-float" aria-label="Gọi điện">
-    <!-- Thay bằng đường dẫn đến icon điện thoại của bạn -->
     <img src="/images/contactPage/phone.png" alt="Phone">
   </a>
 </div>
-<footer>
-  <p>@ 2025 Nguyen Dinh Lam. Bảo lưu mọi quyền.</p>
-  <div>
-    <a href="https://www.facebook.com/dulichtma" style="color:#fff; text-decoration:none;">Facebook</a> |
-    <a href="https://zalo.me/0988153335" style="color:#fff; text-decoration:none;">Zalo</a> |
-    <a href="tel:0988153335" style="color:#fff; text-decoration:none;">Calling</a>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+
+      <div class="footer-col about">
+        <img src="/images/logo.webp" alt="Logo Công ty" class="footer-logo">
+        <h2><strong>CÔNG TY TNHH TRUYỀN THÔNG DU LỊCH TMA</strong></h2>
+        <p><i class="fas fa-map-marker-alt"></i>17 Đường Số 1, Bình Hưng, Bình Chánh, Hồ Chí Minh, Việt Nam</p>
+        <p><i class="fas fa-phone-alt"></i><a href="tel:0988153335" style="color:#bbb; text-decoration:none;">0988 153 335</a></p>
+        <p><i class="fas fa-envelope"></i><a href="mailto:tmatourist@gmail.com" style="color:#bbb; text-decoration:none;">tmatourist@gmail.com</a></p>
+        <p><i class="fas fa-barcode"></i>Mã số thuế: 0317292143</p>
+      </div>
+
+      <div class="footer-col map">
+        <h4>Vị trí văn phòng</h4>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.1615998327056!2d106.65929801162211!3d10.722016289379399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f001ab1c805%3A0x134192f34551c051!2sC%C3%B4ng%20ty%20TMA%20Tourist!5e0!3m2!1svi!2s!4v1752767667465!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/dulichtma" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/tma_tourist/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@TMATOURIST" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://zalo.me/0988153335" aria-label="Zalo" title="Zalo"><i class="fa-solid fa-comment-dots"></i></a>
+        <a href="https://www.tiktok.com/@tmatourist" aria-label="Tiktok" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p>Bản quyền &copy; 2025 thuộc về CÔNG TY TNHH TRUYỀN THÔNG DU LỊCH TMA.</p>
+    </div>
   </div>
 </footer>
 
+<!-- === CẤU TRÚC HTML MỚI CHO LIGHTBOX === -->
+<!-- Lớp 1: Popup hiển thị lưới ảnh -->
+<div id="grid-lightbox" class="lightbox-grid">
+  <div class="lightbox-grid-content">
+    <h3 id="lightbox-grid-title"></h3>
+    <span class="lightbox-close">&times;</span>
+    <div id="lightbox-grid-container" class="lightbox-grid-container">
+    </div>
+  </div>
+</div>
+
+<!-- Lớp 2: Popup hiển thị ảnh chi tiết -->
+<div id="image-viewer" class="image-viewer">
+  <span class="image-viewer-close">&times;</span>
+  <a class="image-viewer-prev">&#10094;</a>
+  <a class="image-viewer-next">&#10095;</a>
+  <div class="image-viewer-content">
+    <img class="image-viewer-image" src="" alt="Hình ảnh phóng to">
+  </div>
+</div>
+
 <script src="/js/index.js" defer></script>
-<script src="/js/blog.js" defer></script>
 <script src="/js/about.js" defer></script>
+<script src="/js/service.js" defer></script>
 </body>
 </html>

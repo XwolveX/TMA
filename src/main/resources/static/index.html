@@ -1,44 +1,46 @@
 <!DOCTYPE html>
-<html lang="vi" xmlns="http://www.w3.org/1999/html">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <title>TMA Tourist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <link rel="preload" href="/css/index.css" as="style">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="/css/index.css" />
   <link rel="stylesheet" href="/css/global.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
 <nav class="navbar">
   <div class="navbar-brand">
     <a href="index.html">
-      <img src="/images/logo.webp" alt="TMA Tourist Logo" height="40" loading="lazy">
+      <img src="/images/logo.webp" alt="TMA Tourist Logo" height="40" width="135" loading="lazy">
     </a>
   </div>
   <div class="nav-links" id="navLinks">
     <a href="index.html" class="active">Trang chủ</a>
     <a href="about.html">Về TMA</a>
     <div class="nav-item dropdown">
-      <a href="service1.html" class="nav-link">
+      <a href="service1.html" class="nav-link" id="services-menu-toggle">
         Dịch vụ <i class="fa-solid fa-caret-down"></i>
       </a>
       <div class="dropdown-menu">
-        <!-- Thay đổi tên và đường dẫn file cho phù hợp -->
         <a href="service1.html">Company Trip & Group Tour</a>
         <a href="service2.html">Event & Team Building & Gala</a>
         <a href="service3.html">Thiết Kế Tour Riêng Theo Yêu Cầu</a>
       </div>
     </div>
-
     <a href="blog.html">Cẩm nang du lịch</a>
     <a href="contact.html">Liên hệ</a>
   </div>
-  <div class="hamburger" onclick="toggleMenu()">
+  <div class="hamburger">
     <div></div>
     <div></div>
     <div></div>
@@ -46,36 +48,37 @@
 </nav>
 
 <section class="video-hero">
-  <video autoplay loop muted playsinline class="video-background">
-    <source src="/videos/video.webm" type="video/webm" >
+  <video autoplay loop muted playsinline class="video-background" poster="/images/hero-poster.webp">
+    <source src="/videos/VideoHero.webm" type="video/webm">
   </video>
   <div class="hero-content">
-    <img src="/images/logo.webp" alt=" Logo" class="hero-logo">
+    <img src="/images/logo.webp" alt="Logo" class="hero-logo" loading="lazy">
     <h1> Tìm Mình Trong Dòng Chảy Bản Sắc Việt</h1>
     <button class="hero-button" id="exploreNowButton">Khám Phá Ngay</button>
   </div>
-</section> <section class="mascot-info-section" id="mascotSection"> <img src="/images/background-section-mascot.webp" alt="Section Background" class="mascot-section-background-image">
+</section>
+
+<section class="mascot-info-section" id="mascotSection">
+  <img src="/images/background-section-mascot.webp" alt="Section Background" class="mascot-section-background-image" loading="lazy">
   <h2 class="section-header-title">LÝ DO NÊN CHỌN TMA TOURIST</h2>
   <h1 class="reasons-slogan">
     Chuyên nghiệp - <span style="color: #cda453;">Sáng tạo</span> - Linh hoạt
   </h1>
   <div class="mascot-info-container">
-
     <div class="mascot-main-display">
-      <video autoplay loop muted playsinline class="main-mascot-video">
-        <source src="/videos/mascot.webm" type="video/webm" >
+      <video autoplay loop muted playsinline class="main-mascot-video" loading="lazy">
+        <source src="/videos/mascot.webm" type="video/webm">
         Your browser does not support the video.
       </video>
     </div>
-
     <div class="mascot-details-left">
       <div class="mascot-card" id="openVideoPopupButtonFromCard">
-        <img src="/images/mascot-2.webp" alt="Mascot Thumbnail" class="mascot-thumbnail">
+        <!-- OPTIMIZATION: Added width, height, and lazy loading. -->
+        <img src="/images/mascot-2.webp" alt="Mascot Thumbnail" class="mascot-thumbnail" width="80" height="80" loading="lazy">
         <div class="rarity-score">
           <span class="score-value" style="color: #FFFDD0; margin-right: 0;">Bấm để xem video!</span>
         </div>
       </div>
-
       <div class="mascot-info-text">
         <h3 class="mascot-name">TÌM HIỂU VỀ TMA TOURIST</h3>
         <p class="mascot-description">
@@ -83,174 +86,150 @@
         </p>
       </div>
     </div>
-
     <div class="mascot-stats-right">
       <div class="stat-item">
-        <p class="stat-number" data-target="5">5+ NĂM</p> <p class="stat-description"> KINH NGHIỆM NGÀNH DU LỊCH</p>
+        <p class="stat-number" data-target="5">0+</p> <p class="stat-description"> KINH NGHIỆM NGÀNH DU LỊCH</p>
       </div>
       <div class="stat-item">
-        <p class="stat-number" data-target="2500">2500+</p> <p class="stat-description">KHÁCH HÀNG</p>
+        <p class="stat-number" data-target="2500">0+</p> <p class="stat-description">KHÁCH HÀNG</p>
       </div>
       <div class="stat-item">
-        <p class="stat-number" data-target="585">585+</p> <p class="stat-description">TOUR DU LỊCH TRỌN GÓI</p>
+        <p class="stat-number" data-target="585">0+</p> <p class="stat-description">TOUR DU LỊCH TRỌN GÓI</p>
       </div>
       <div class="stat-item">
-        <p class="stat-number" data-target="170">170</p> <p class="stat-description">ĐỐI TÁC LỮ HÀNH KHÁCH SẠN</p>
+        <p class="stat-number" data-target="170">0</p> <p class="stat-description">ĐỐI TÁC LỮ HÀNH KHÁCH SẠN</p>
       </div>
     </div>
-  </div> </section>
+  </div>
+</section>
 
 <div class="video-popup-overlay" id="videoPopupOverlay">
   <div class="video-popup-content">
     <span class="close-popup-button" id="closeVideoPopupButton">&times;</span>
-    <video controls playsinline id="introVideoPlayer">
+    <video controls playsinline id="introVideoPlayer" loading="lazy">
       <source src="/videos/VideoExplain.webm" type="video/webm">
       Your browser does not support the video.
     </video>
   </div>
 </div>
 
+<!-- SECTION FLOWING CONTENT - BẮT ĐẦU -->
 <section class="flowing-content-section">
-  <img src="/images/flow-image.webp" alt="Section Background" class="flowing-section-background-image">
+  <img src="/images/flow-image.webp" alt="Section Background" class="flowing-section-background-image" loading="lazy">
   <div class="flowing-section-overlay"></div>
-  <h2 class="section-header-title">TMA CUNG CẤP ĐA DẠNG CÁC DỊCH VỤ</h2> <div class="flowing-track track-right-to-left">
-  <div class="flowing-content-wrapper">
-    <div class="flowing-item">
-      <img src="/images/cutscenes/1.webp" alt="Địa điểm 1">
-    </div>
-    <div class="flowing-item">
-      <video autoplay loop muted playsinline src="/videos/cutscenes/video1.webm"></video>
-    </div>
-    <div class="flowing-item">
-      <img src="/images/cutscenes/2.webp" alt="Địa điểm 2" >
-    </div>
-    <div class="flowing-item">
-      <video autoplay loop muted playsinline src="/videos/cutscenes/video2.webm"></video>
-    </div>
-    <div class="flowing-item">
-      <img src="/images/cutscenes/3.webp" alt="Địa điểm 3">
-    </div>
-    <div class="flowing-item">
-      <video autoplay loop muted playsinline src="/videos/cutscenes/video3.webm"></video>
-    </div>
-    <div class="flowing-item">
-      <img src="/images/cutscenes/4.webp" alt="Địa điểm 1" >
-    </div>
-    <div class="flowing-item">
-      <video autoplay loop muted playsinline src="/videos/cutscenes/video1.webm"></video>
-    </div>
-    <div class="flowing-item">
-      <img src="/images/cutscenes/5.webp" alt="Địa điểm 2" >
-    </div>
-    <div class="flowing-item">
-      <video autoplay loop muted playsinline src="/videos/cutscenes/video2.webm"></video>
-    </div>
-    <div class="flowing-item">
-      <img src="/images/cutscenes/6.webp" alt="Địa điểm 3" >
-    </div>
-    <div class="flowing-item">
-      <video autoplay loop muted playsinline src="/videos/cutscenes/video3.webm"></video>
+  <h2 class="section-header-title">TMA CUNG CẤP ĐA DẠNG CÁC DỊCH VỤ</h2>
+
+  <!-- Dòng chảy từ phải sang trái -->
+  <div class="flowing-track track-right-to-left">
+    <div class="flowing-content-wrapper">
+      <!-- Nội dung gốc sẽ được đặt ở đây, JavaScript sẽ tự động nhân đôi -->
+      <div class="flowing-item"><img src="/images/cutscenes/1.webp" alt="Địa điểm 1" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video1.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/2.webp" alt="Địa điểm 2" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video2.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/3.webp" alt="Địa điểm 3" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video3.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/4.webp" alt="Địa điểm 4" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video4.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/5.webp" alt="Địa điểm 5" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video5.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/6.webp" alt="Địa điểm 6" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video6.webm" width="250" height="180" loading="lazy"></video></div>
     </div>
   </div>
-</div>
 
+  <!-- Dòng chảy từ trái sang phải -->
   <div class="flowing-track track-left-to-right">
     <div class="flowing-content-wrapper">
-      <div class="flowing-item">
-        <video autoplay loop muted playsinline src="/videos/cutscenes/video4.webm"></video>
-      </div>
-      <div class="flowing-item">
-        <img src="/images/cutscenes/7.webp" alt="Địa điểm 4" >
-      </div>
-      <div class="flowing-item">
-        <video autoplay loop muted playsinline src="/videos/cutscenes/video3.webm"></video>
-      </div>
-      <div class="flowing-item">
-        <img src="/images/cutscenes/8.webp" alt="Địa điểm 5" >
-      </div>
-      <div class="flowing-item">
-        <video autoplay loop muted playsinline src="/videos/cutscenes/video1.webm"></video>
-      </div>
-      <div class="flowing-item">
-        <img src="/images/cutscenes/9.webp" alt="Địa điểm 6" >
-      </div>
-      <div class="flowing-item">
-        <video autoplay loop muted playsinline src="/videos/cutscenes/video4.webm"></video>
-      </div>
-      <div class="flowing-item">
-        <img src="/images/cutscenes/10.webp" alt="Địa điểm 4" >
-      </div>
-      <div class="flowing-item">
-        <video autoplay loop muted playsinline src="/videos/cutscenes/video2.webm"></video>
-      </div>
-      <div class="flowing-item">
-        <img src="/images/cutscenes/11.webp" alt="Địa điểm 5" >
-      </div>
-      <div class="flowing-item">
-        <video autoplay loop muted playsinline src="/videos/cutscenes/video3.webm"></video>
-      </div>
-      <div class="flowing-item">
-        <img src="/images/cutscenes/12.webp" alt="Địa điểm 6" >
-      </div>
+      <!-- Nội dung gốc sẽ được đặt ở đây, JavaScript sẽ tự động nhân đôi -->
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video7.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/7.webp" alt="Địa điểm 7" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video8.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/8.webp" alt="Địa điểm 8" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video9.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/9.webp" alt="Địa điểm 9" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video10.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/10.webp" alt="Địa điểm 10" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video11.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/11.webp" alt="Địa điểm 11" width="250" height="180" loading="lazy"></div>
+      <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video12.webm" width="250" height="180" loading="lazy"></video></div>
+      <div class="flowing-item"><img src="/images/cutscenes/12.webp" alt="Địa điểm 12" width="250" height="180" loading="lazy"></div>
     </div>
   </div>
 </section>
+<!-- SECTION FLOWING CONTENT - KẾT THÚC -->
 
 <section class="partners-section">
-  <img src="/images/background-section-partner.webp" alt="Partners Section Background" class="partners-section-background-image">
+  <img src="/images/background-section-partner.webp" alt="Partners Section Background" class="partners-section-background-image" loading="lazy">
   <h2 class="section-header-title">CÁC ĐỐI TÁC ĐÃ ĐỒNG HÀNH CÙNG TMA TOURIST</h2>
-
   <div class="partners-intro">
     <p class="intro-text">NIỀM TIN TỪ NHỮNG THƯƠNG HIỆU HÀNG ĐẦU</p>
     <p class="intro-description">
       Sự tin tưởng và lựa chọn của các đối tác lớn như Suntory Pepsico, Heineken, Thang Loi Group và nhiều doanh nghiệp khác là minh chứng rõ ràng nhất cho năng lực và uy tín của TMA Tourist.
     </p>
   </div>
-
-  <div class="carousel-3d-container"> <div class="carousel-3d-wrapper" id="carousel3dWrapper"> <div class="carousel-3d-item">
-    <img src="/images/logo/BNI.webp" alt="BNI" >
-  </div>
-    <div class="carousel-3d-item"><img src="/images/logo/Suntory.webp" alt="Suntory" ></div>
-    <div class="carousel-3d-item"><img src="/images/logo/Heineken.webp" alt="Heineken"></div>
-    <div class="carousel-3d-item"><img src="/images/logo/ThangLoi.webp" alt="ThangLoi"></div>
-    <div class="carousel-3d-item"><img src="/images/logo/SeaBank.webp" alt="SeaBank"></div>
-    <div class="carousel-3d-item"><img src="/images/logo/BNI.webp" alt="BNI" ></div>
-    <div class="carousel-3d-item"><img src="/images/logo/AT.webp" alt="AT"></div>
-    <div class="carousel-3d-item"><img src="/images/logo/Big8.webp" alt="Big8"></div>
-    <div class="carousel-3d-item"><img src="/images/logo/Daichi.webp" alt="Daichi"></div>
-    <div class="carousel-3d-item"><img src="/images/logo/jollibee.webp" alt="Jollibee"></div>
-    <div class="carousel-3d-item"><img src="/images/logo/TinDat.webp" alt="Tin Dat"></div>
-    <div class="carousel-3d-item"><img src="/images/logo/VIB.webp" alt="VIB"></div>
-    <div class="carousel-3d-item"><img src="/images/logo/VietBank.webp" alt="Viet Bank"></div>
-  </div>
+  <div class="carousel-3d-container">
+    <div class="carousel-3d-wrapper" id="carousel3dWrapper">
+      <div class="carousel-3d-item"><img src="/images/logo/BNI.webp" alt="BNI" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/Suntory.webp" alt="Suntory" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/Heineken.webp" alt="Heineken" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/ThangLoi.webp" alt="ThangLoi" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/SeaBank.webp" alt="SeaBank" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/BNI.webp" alt="BNI" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/AT.webp" alt="AT" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/Big8.webp" alt="Big8" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/Daichi.webp" alt="Daichi" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/jollibee.webp" alt="Jollibee" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/TinDat.webp" alt="Tin Dat" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/VIB.webp" alt="VIB" loading="lazy"></div>
+      <div class="carousel-3d-item"><img src="/images/logo/VietBank.webp" alt="Viet Bank" loading="lazy"></div>
+    </div>
     <button class="carousel-3d-nav prev" id="carousel3dPrev">‹</button>
     <button class="carousel-3d-nav next" id="carousel3dNext">›</button>
   </div>
 </section>
 
-<!-- ====================================================== -->
-<!-- CÁC NÚT LIÊN HỆ THẢ NỔI -->
-<!-- ====================================================== -->
 <div class="floating-contact">
-  <!-- Nút Zalo -->
-  <!-- Thay YOUR_PHONE_NUMBER bằng SĐT đăng ký Zalo của bạn (không có số 0 ở đầu) -->
   <a href="https://zalo.me/84988153335" class="float-btn zalo-float" target="_blank" aria-label="Chat Zalo">
-    <!-- Thay bằng đường dẫn đến icon Zalo của bạn -->
-    <img src="/images/contactPage/zalo.webp" alt="Zalo">
+    <img src="/images/contactPage/zalo.webp" alt="Zalo" width="60" height="60" loading="lazy">
   </a>
-  <!-- Nút Gọi điện -->
   <a href="tel:0988153335" class="float-btn phone-float" aria-label="Gọi điện">
-    <!-- Thay bằng đường dẫn đến icon điện thoại của bạn -->
-    <img src="/images/contactPage/phone.png" alt="Phone">
+    <img src="/images/contactPage/phone.png" alt="Phone" width="60" height="60" loading="lazy">
   </a>
 </div>
 
-<footer>
-  <p>@ 2025 Nguyen Dinh Lam. Bảo lưu mọi quyền.</p>
-  <div class="social-links">
-    <a href="https://www.facebook.com/dulichtma" style="color:#fff; text-decoration:none;">Facebook</a> |
-    <a href="https://zalo.me/0988153335" style="color:#fff; text-decoration:none;">Zalo</a> |
-    <a href="tel:0988153335" style="color:#fff; text-decoration:none;">Calling</a>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+
+      <div class="footer-col about">
+        <img src="/images/logo.webp" alt="Logo Công ty" class="footer-logo">
+        <h2><strong>CÔNG TY TNHH TRUYỀN THÔNG DU LỊCH TMA</strong></h2>
+        <p><i class="fas fa-map-marker-alt"></i>17 Đường Số 1, Bình Hưng, Bình Chánh, Hồ Chí Minh, Việt Nam</p>
+        <p><i class="fas fa-phone-alt"></i><a href="tel:0988153335" style="color:#bbb; text-decoration:none;">0988 153 335</a></p>
+        <p><i class="fas fa-envelope"></i><a href="mailto:tmatourist@gmail.com" style="color:#bbb; text-decoration:none;">tmatourist@gmail.com</a></p>
+        <p><i class="fas fa-barcode"></i>Mã số thuế: 0317292143</p>
+      </div>
+
+      <div class="footer-col map">
+        <h4>Vị trí văn phòng</h4>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.1615998327056!2d106.65929801162211!3d10.722016289379399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f001ab1c805%3A0x134192f34551c051!2sC%C3%B4ng%20ty%20TMA%20Tourist!5e0!3m2!1svi!2s!4v1752767667465!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/dulichtma" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/tma_tourist/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@TMATOURIST" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://zalo.me/0988153335" aria-label="Zalo" title="Zalo"><i class="fa-solid fa-comment-dots"></i></a>
+        <a href="https://www.tiktok.com/@tmatourist" aria-label="Tiktok" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p>Bản quyền &copy; 2025 thuộc về CÔNG TY TNHH TRUYỀN THÔNG DU LỊCH TMA.</p>
+    </div>
   </div>
 </footer>
 
