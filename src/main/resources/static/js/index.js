@@ -14,6 +14,46 @@ document.addEventListener('DOMContentLoaded', () => {
         setVideoSource();
         window.addEventListener('resize', setVideoSource);
     }
+    // --- LOGIC TẢI MASCOT THEO ĐỊNH DẠNG VÀ KÍCH CỠ MÀN HÌNH ---
+    const mascotContainer = document.getElementById('mascot-container');
+    if (mascotContainer) {
+        const desktopVideoSrc = '/videos/mascot.webm';
+        const mobileImageSrc = '/images/mascotMobile.webp';
+
+        let lastLoadedType = '';
+
+        function loadMascot() {
+            const screenWidth = window.innerWidth;
+            const currentType = screenWidth > 768 ? 'video' : 'image';
+
+            if (currentType === lastLoadedType) {
+                return;
+            }
+
+            mascotContainer.innerHTML = '';
+
+            if (currentType === 'video') {
+                const video = document.createElement('video');
+                video.className = 'main-mascot-video';
+                video.autoplay = true;
+                video.loop = true;
+                video.muted = true;
+                video.playsInline = true;
+                video.src = desktopVideoSrc;
+                mascotContainer.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.className = 'main-mascot-image';
+                img.src = mobileImageSrc;
+                img.alt = 'Mascot TMA Tourist';
+                mascotContainer.appendChild(img);
+            }
+            lastLoadedType = currentType;
+        }
+
+        loadMascot();
+        window.addEventListener('resize', loadMascot);
+    }
     // --- LOGIC CHO HAMBURGER & DROPDOWN MENU ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.getElementById('navLinks');

@@ -1,6 +1,7 @@
 html {
     overflow-x: hidden;
 }
+
 * {
     padding: 0;
     box-sizing: border-box;
@@ -17,6 +18,8 @@ body {
     color: #333;
     line-height: 1.6;
 }
+
+/* Navbar */
 .navbar {
     background-color: rgba(0, 0, 0, .2);
     border: 1px solid rgba(255, 255, 255, .1);
@@ -138,10 +141,8 @@ body {
     font-family: 'Dancing Script', cursive;
     font-size: 3em;
     font-weight: 700;
-    margin-right: 30px;
-    margin-left: 30px;
-    margin-bottom: 10px;
     color: #fffdd0;
+    margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .7);
 }
 
@@ -244,6 +245,7 @@ h1.reasons-slogan span {
     position: relative;
     z-index: 5;
     flex-shrink: 0;
+    background-color: transparent; /* THAY ĐỔI QUAN TRỌNG: Thêm dòng này */
 }
 
 .main-mascot-video {
@@ -251,9 +253,13 @@ h1.reasons-slogan span {
     height: auto;
     display: block;
     object-fit: contain;
-    border-radius: 15px;
 }
-
+.main-mascot-image {
+    max-width: 400px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
 /* Mascot Details & Cards */
 .mascot-details-left {
     position: absolute;
@@ -736,10 +742,10 @@ footer .social-links a:hover {
 
     .nav-links {
         position: fixed;
-        top: 70px; /* Cập nhật theo chiều cao mới của navbar */
+        top: 70px;
         left: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, .85); /* Tăng độ mờ cho dễ đọc */
+        background-color: rgba(0, 0, 0, .85);
         flex-direction: column;
         align-items: center;
         display: none;
@@ -757,7 +763,7 @@ footer .social-links a:hover {
 
     .nav-links a {
         font-size: 16px;
-        padding: 12px 0; /* Tăng padding để dễ bấm hơn */
+        padding: 12px 0;
         width: 100%;
         color: #fffdd0;
         text-align: center;
@@ -775,12 +781,11 @@ footer .social-links a:hover {
         font-size: 1.2em;
     }
 
-    /* ---- TỐI ƯU QUAN TRỌNG CHO MASCOT SECTION ---- */
     .mascot-info-section {
-        margin-top: -70px; /* Đẩy section lên cao 70px để tạo hiệu ứng gối */
-        position: relative; /* Đảm bảo section hiển thị trên cùng */
-        padding: 80px 20px 60px; /* Tăng padding top để không bị navbar che */
-        z-index: 2; /* Đặt z-index cao hơn section hero */
+        margin-top: -70px;
+        position: relative;
+        padding: 80px 20px 60px;
+        z-index: 2;
     }
 
     .section-header-title {
