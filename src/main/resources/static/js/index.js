@@ -146,8 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, {
-            // THAY ĐỔI QUAN TRỌNG: Giảm ngưỡng kích hoạt xuống 0.2 (20%)
-            // để đảm bảo hiệu ứng chạy trên màn hình mobile hẹp.
             threshold: 0.2
         });
         observer.observe(statsSection);

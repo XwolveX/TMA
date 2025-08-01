@@ -46,9 +46,11 @@
     <div></div>
   </div>
 </nav>
-
+<div id="preloader">
+  <img src="/images/logo.webp" alt="Loading..." class="preloader-logo">
+</div>
 <section class="video-hero">
-  <video autoplay loop muted playsinline class="video-background" id="heroVideo" poster="/images/videoCap.webp">
+  <video autoplay loop muted playsinline class="video-background" id="heroVideo">
   </video>
   <div class="hero-content">
     <img src="/images/logo.webp" alt="Logo" class="hero-logo" width="460" height="130" loading="lazy">
@@ -116,7 +118,6 @@
   <!-- Dòng chảy từ phải sang trái -->
   <div class="flowing-track track-right-to-left">
     <div class="flowing-content-wrapper">
-      <!-- Nội dung gốc sẽ được đặt ở đây, JavaScript sẽ tự động nhân đôi -->
       <div class="flowing-item"><img src="/images/cutscenes/1.webp" alt="Địa điểm 1" width="250" height="180" loading="lazy"></div>
       <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video1.webm" width="250" height="180" loading="lazy"></video></div>
       <div class="flowing-item"><img src="/images/cutscenes/2.webp" alt="Địa điểm 2" width="250" height="180" loading="lazy"></div>
@@ -135,7 +136,6 @@
   <!-- Dòng chảy từ trái sang phải -->
   <div class="flowing-track track-left-to-right">
     <div class="flowing-content-wrapper">
-      <!-- Nội dung gốc sẽ được đặt ở đây, JavaScript sẽ tự động nhân đôi -->
       <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video7.webm" width="250" height="180" loading="lazy"></video></div>
       <div class="flowing-item"><img src="/images/cutscenes/7.webp" alt="Địa điểm 7" width="250" height="180" loading="lazy"></div>
       <div class="flowing-item"><video autoplay loop muted playsinline src="/videos/cutscenes/video8.webm" width="250" height="180" loading="lazy"></video></div>
@@ -226,7 +226,14 @@
     </div>
   </div>
 </footer>
-
+<script>
+  window.onload = function() {
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+      preloader.classList.add('preloader-hidden');
+    }, 250);
+  };
+</script>
 <script src="/js/index.js" defer></script>
 
 </body>

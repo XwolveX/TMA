@@ -1,6 +1,5 @@
 // Scroll reveal animation với hiệu ứng cuộn ngược nâng cao
 document.addEventListener("DOMContentLoaded", () => {
-    // Hiển thị section ngay lập tức
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.classList.add('visible');
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     const observerOptions = {
-        threshold: [0, 0.1, 0.25, 0.5], // Multiple thresholds cho hiệu ứng mượt hơn
+        threshold: [0, 0.1, 0.25, 0.5],
         rootMargin: '0px 0px -80px 0px'
     };
 
@@ -108,93 +107,5 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
         });
-    });
-});
-// Gemini API integration script
-document.addEventListener('DOMContentLoaded', () => {
-    const generateBtn = document.getElementById('generatePlanBtn');
-    const destinationInput = document.getElementById('destinationInput');
-    const planResult = document.getElementById('planResult');
-    const loader = document.getElementById('loader');
-
-    // Modal elements
-    const modal = document.getElementById('messageModal');
-    const modalMessage = document.getElementById('modalMessage');
-    const closeButton = document.querySelector('.close-button');
-
-    function showModal(message) {
-        modalMessage.textContent = message;
-        modal.style.display = 'block';
-    }
-
-    closeButton.onclick = function() {
-        modal.style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
-
-    function markdownToHtml(md) {
-        // A simple parser for demonstration
-        return md
-            .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-            .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-            .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-            .replace(/^\* (.*$)/gim, '<li>$1</li>')
-            .replace(/(\r\n|\n|\r)/gm, '<br>')
-            .replace(/<br><li>/g, '<li>') // fix extra br before li
-            .replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>') // Wrap li in ul
-            .replace(/<\/ul><br><ul>/g, ''); // Join consecutive lists
-    }
-
-    generateBtn.addEventListener('click', async () => {
-        const destination = destinationInput.value.trim();
-        if (!destination) {
-            showModal('Vui lòng nhập một địa điểm để chúng tôi có thể gợi ý.');
-            return;
-        }
-
-        planResult.innerHTML = '';
-        loader.style.display = 'block';
-        generateBtn.disabled = true;
-        generateBtn.textContent = 'Đang xử lý...';
-
-        try {
-            const prompt = `Bạn là một chuyên gia tư vấn du lịch tại Việt Nam. Hãy tạo một lịch trình du lịch chi tiết và hấp dẫn cho 3 ngày 2 đêm tại "${destination}". Gợi ý bao gồm các địa điểm tham quan nổi bật, những món ăn đặc sản không thể bỏ lỡ, và các hoạt động vui chơi giải trí. Trình bày câu trả lời bằng tiếng Việt, sử dụng định dạng markdown với các tiêu đề rõ ràng cho mỗi ngày.`;
-            let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-            const payload = { contents: chatHistory };
-            const apiKey = ""; // API key is handled by the environment
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-
-            if (!response.ok) {
-                throw new Error(`API Error: ${response.status} ${response.statusText}`);
-            }
-
-            const result = await response.json();
-
-            if (result.candidates && result.candidates.length > 0) {
-                const text = result.candidates[0].content.parts[0].text;
-                planResult.innerHTML = markdownToHtml(text);
-            } else {
-                throw new Error("Không nhận được phản hồi hợp lệ từ AI. Vui lòng thử lại.");
-            }
-
-        } catch (error) {
-            console.error('Error calling Gemini API:', error);
-            showModal(`Đã có lỗi xảy ra: ${error.message}. Vui lòng thử lại sau.`);
-        } finally {
-            loader.style.display = 'none';
-            generateBtn.disabled = false;
-            generateBtn.textContent = 'Tạo Lịch Trình';
-        }
     });
 });

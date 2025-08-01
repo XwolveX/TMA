@@ -132,7 +132,7 @@ body {
 }
 
 .hero-content .hero-logo {
-    max-width: 200px;
+    max-width: 300px;
     margin-bottom: 10px;
 }
 
@@ -245,7 +245,7 @@ h1.reasons-slogan span {
     position: relative;
     z-index: 5;
     flex-shrink: 0;
-    background-color: transparent; /* THAY ĐỔI QUAN TRỌNG: Thêm dòng này */
+    background-color: transparent;
 }
 
 .main-mascot-video {
@@ -254,12 +254,14 @@ h1.reasons-slogan span {
     display: block;
     object-fit: contain;
 }
+
 .main-mascot-image {
     max-width: 400px;
     height: auto;
     display: block;
     object-fit: contain;
 }
+
 /* Mascot Details & Cards */
 .mascot-details-left {
     position: absolute;
@@ -789,28 +791,29 @@ footer .social-links a:hover {
     }
 
     .section-header-title {
-        font-size: 2.2em;
+        font-size: 2.5em;
         margin-bottom: 20px;
-        margin-top: 0;
+        margin-top: 10px;
     }
 
     h1.reasons-slogan {
-        font-size: 1.5em; /* Giảm kích thước font */
+        font-size: 1em;
     }
-
+    .main-mascot-image {
+        max-width: 300px
+    }
     .mascot-info-container {
         flex-direction: column;
-        gap: 40px; /* Giảm khoảng cách giữa các phần tử */
+        gap: 40px;
     }
 
-    /* Đặt lại position cho các khối thông tin */
     .mascot-details-left,
     .mascot-stats-right {
-        position: static; /* Quan trọng: Chuyển về layout tĩnh */
+        position: static;
         transform: none;
         width: 100%;
-        max-width: 450px; /* Giới hạn chiều rộng tối đa */
-        padding: 25px 20px;
+        max-width: 320px;
+        padding: 40px 40px;
         background-color: rgba(0, 0, 0, .3);
         backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, .1);
@@ -826,7 +829,7 @@ footer .social-links a:hover {
 
     .mascot-details-left {
         order: 2;
-        margin-top: 20px; /* Giảm margin top */
+        margin-top: 20px;
     }
 
     .mascot-stats-right {
@@ -835,7 +838,7 @@ footer .social-links a:hover {
     }
 
     .main-mascot-video {
-        max-width: 100%; /* Đảm bảo video co dãn theo container */
+        max-width: 100%;
     }
 
     .mascot-info-text,
@@ -848,7 +851,7 @@ footer .social-links a:hover {
     }
 
     .made-by-text {
-        display: none; /* Ẩn trên mobile cho gọn */
+        display: none;
     }
 
     /* Carousel */
@@ -870,11 +873,11 @@ footer .social-links a:hover {
 /* Small Tablet & Large Mobile (max-width: 768px) */
 @media (max-width: 768px) {
     .section-header-title {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     h1.reasons-slogan {
-        font-size: 1.3em;
+        font-size: 1em;
         padding: 5px 15px;
     }
 
@@ -902,6 +905,37 @@ footer .social-links a:hover {
         padding: 10px 15px;
         font-size: 1.5em;
     }
+
+    /* Thu nhỏ thẻ mascot bên trái */
+    .mascot-card {
+        width: 180px;
+        padding: 12px;
+    }
+
+    .mascot-thumbnail {
+        width: 70px;
+        height: 70px;
+    }
+
+    .mascot-name {
+        font-size: 1.8em;
+    }
+
+    .mascot-description {
+        font-size: 1em;
+    }
+
+    .mascot-stats-right {
+        gap: 20px;
+    }
+
+    .mascot-stats-right .stat-number {
+        font-size: 2em;
+    }
+
+    .mascot-stats-right .stat-description {
+        font-size: 0.8em;
+    }
 }
 
 
@@ -921,21 +955,21 @@ footer .social-links a:hover {
     }
 
     .hero-content h1 {
-        font-size: 1.8em;
+        font-size: 1.5em;
         line-height: 1.4;
     }
 
     .hero-button {
-        padding: 12px 24px;
-        font-size: 1em;
+        padding: 10px 24px;
+        font-size: 0.8em;
     }
 
     .section-header-title {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 
     h1.reasons-slogan {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .mascot-info-section {
@@ -944,7 +978,7 @@ footer .social-links a:hover {
 
     .mascot-details-left,
     .mascot-stats-right {
-        padding: 20px 15px;
+        padding: 40px 15px;
     }
 
     .mascot-name {
@@ -952,11 +986,11 @@ footer .social-links a:hover {
     }
 
     .mascot-stats-right .stat-number {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .mascot-stats-right .stat-description {
-        font-size: .85em;
+        font-size: .7em;
     }
 
     /* Flowing content */
@@ -981,7 +1015,7 @@ footer .social-links a:hover {
     }
 
     .carousel-3d-nav.next {
-        right: 5px; /* Điều chỉnh lại vị trí nếu cần */
+        right: 5px;
     }
 
     /* Nút liên hệ nổi */
@@ -999,5 +1033,20 @@ footer .social-links a:hover {
     .float-btn img {
         width: 28px;
         height: 28px;
+    }
+
+    .mascot-card {
+        width: 160px;
+        padding: 10px;
+    }
+
+    .mascot-thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+
+    .mascot-description {
+        font-size: 0.95em;
+        line-height: 1.5;
     }
 }

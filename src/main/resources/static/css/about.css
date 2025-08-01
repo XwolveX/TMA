@@ -321,7 +321,7 @@ section.timeline-section {
 
 /* --- Team Section --- */
 .team-section {
-    background: transparent; /* Explicitly set to transparent */
+    background: transparent;
     margin-bottom: 200px;
 }
 
@@ -449,12 +449,10 @@ section.timeline-section {
     }
 }
 @media (max-width: 428px) {
-    /* Giảm padding chung của các section */
     section {
         padding: 40px 15px;
         margin: 30px auto;
     }
-    /* Điều chỉnh kích thước các tiêu đề chính */
     .service-title,
     .section-title {
         font-size: 1.8em;
